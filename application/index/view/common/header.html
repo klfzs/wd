@@ -7,113 +7,111 @@
     <link rel="stylesheet" href="__STATIC__/css/index.css">
     <title></title>
 </head>
-
-<body>
-    <div class="header">
-        <div class="title">
-            <div class="title_left">
-                <span>正学文灯专升本欢迎您!</span>
+<div class="header">
+    <div class="title">
+        <div class="title_left">
+            <span>正学文灯专升本欢迎您!</span>
 
 
-            </div>
-            <div class="title_right">
-                <ul>
-                    <li><a href="#">个人中心</a></li>
-                    <li>
-                        <div class="term"></div>
-                    </li>
-                    <li><a href="#">登录</a></li>
-                    <li>
-                        <div class="term"></div>
-                    </li>
-                    <li><a href="#">注册</a></li>
-                    <li>
-                        <div class="term"></div>
-                    </li>
-                    <li><a href="#">返回网站首页</a></li>
-                </ul>
-
-            </div>
         </div>
-        <div class="head_up">
-            <div class="logo am-fl">
-                <a href="#">
-                    <img src="__STATIC__/image/LOGO1.jpg" />
-                </a>
-                <a href="#">
-                    <img src="__STATIC__/image/logo2.png" style="margin-left: 30px;" />
-                </a>
-            </div>
-            <div class="area am-fl">
-                <ul>
-                    <li>
-                        <a href="#">文登专升本</a>
-                        <ol>
+        <div class="title_right">
+            <ul>
+                <li><a href="#">个人中心</a></li>
+                <li>
+                    <div class="term"></div>
+                </li>
+                <li><a href="#">登录</a></li>
+                <li>
+                    <div class="term"></div>
+                </li>
+                <li><a href="#">注册</a></li>
+                <li>
+                    <div class="term"></div>
+                </li>
+                <li><a href="#">返回网站首页</a></li>
+            </ul>
 
-                            <li><a href="#">重庆</a></li>
-
-                        </ol>
-                    </li>
-                    <li>
-                        <a href="#">正学专升本</a>
-                        <ol>
-
-                            <li><a href="#">四川</a></li>
-
-
-                            <li><a href="#">贵州</a></li>
-
-
-                            <li> <a href="#">云南</a></li>
-
-
-                            <li> <a href="#">黑龙江</a></li>
-
-                        </ol>
-                    </li>
-                </ul>
-
-            </div>
-            <div class="bg_ewm">
-
-            </div>
-            <div class="ewm">
-                <img src="__STATIC__/image/qrcode_for_gh_9531463fa668_258.jpg" alt="中匡教育微信公众号二维码" title="中匡教育微信公众号二维码" />
-            </div>
-
-            <div class="search am-cf">
-                023-6582-3501
-            </div>
         </div>
-        <div class="nav">
-            <div class="tapBoxf">
-                <div class="tapBoxfn text-bt">
-                    <ul class="clearfix">
-                        <li {if empty($nav_id) }class="active" {/if}>
-                            <a class="tapa" href="/">首页</a>
-                        </li>
-                        {voList name="nav" id="vo"}
-                        <li {if !empty($nav_id) && $vo.id==$nav_id }class="active" {/if}>
-                            <a class="tapa" href="{if $vo.link != ''} {$vo['link']} {else} javascript:; {/if}" target="{$vo['target']}" title="{$vo['name']}">{$vo['name']}</a> {if !empty($vo['children']) }
-                            <div class="m">
-                                <div class="n">
-                                    <div class="l">
-                                        <dl>
-                                            {voList name="vo['children']" id="vc" }
-                                            <dd><a href="{$vc['link']}" target="{$vc['target']}" title="{$vc['name']}">{$vc['name']}</a></dd>
-                                            {/voList}
-                                        </dl>
-                                    </div>
+    </div>
+    <div class="head_up">
+        <div class="logo am-fl">
+            <a href="#">
+                <img src="__STATIC__/image/LOGO1.jpg" />
+            </a>
+            <a href="#">
+                <img src="__STATIC__/image/logo2.png" style="margin-left: 30px;" />
+            </a>
+        </div>
+        <div class="area am-fl">
+            <ul>
+                <li>
+                    <a href="#">文登专升本</a>
+                    <ol>
+
+                        <li><a href="#">重庆</a></li>
+
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">正学专升本</a>
+                    <ol>
+
+                        <li><a href="#">四川</a></li>
+
+
+                        <li><a href="#">贵州</a></li>
+
+
+                        <li> <a href="#">云南</a></li>
+
+
+                        <li> <a href="#">黑龙江</a></li>
+
+                    </ol>
+                </li>
+            </ul>
+
+        </div>
+        <div class="bg_ewm">
+
+        </div>
+        <div class="ewm">
+            <img src="__STATIC__/image/qrcode_for_gh_9531463fa668_258.jpg" alt="文登微信公众号二维码" title="中匡教育微信公众号二维码" />
+        </div>
+
+        <div class="search am-cf">
+            023-6582-3501
+        </div>
+
+    </div>
+
+    <div class="nav">
+        <div class="tapBoxf">
+            <div class="tapBoxfn text-bt">
+                <ul class="clearfix">
+                    <li {if empty($nav_id) }class="active" {/if}>
+                        <a class="tapa" href="/">首页</a>
+                    </li>
+                    {voList name="nav" id="vo"}
+                    <li {if !empty($nav_id) && $vo.id==$nav_id }class="active" {/if}>
+                        <a class="tapa" href="{if $vo.link != ''} {$vo['link']} {else} javascript:; {/if}" target="{$vo['target']}" title="{$vo['name']}">{$vo['name']}</a> {if !empty($vo['children']) }
+                        <div class="m">
+                            <div class="n">
+                                <div class="l">
+                                    <dl>
+                                        {voList name="vo['children']" id="vc" }
+                                        <dd><a href="{$vc['link']}" target="{$vc['target']}" title="{$vc['name']}">{$vc['name']}</a></dd>
+                                        {/voList}
+                                    </dl>
                                 </div>
                             </div>
-                            {/if}
-                        </li>
-                        {/voList}
-                    </ul>
-                </div>
+                        </div>
+                        {/if}
+                    </li>
+                    {/voList}
+                </ul>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>
+<div style="clear: both;"></div>
