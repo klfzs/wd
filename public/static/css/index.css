@@ -1,4 +1,5 @@
 * {
+    font-family: "Microsoft YaHei";
     padding: 0;
     margin: 0;
 }
@@ -57,7 +58,7 @@ a {
     width: 1200px;
     height: 100px;
     margin: 0 auto;
-    border: 1px solid #7f7f7f;
+    border: 1px solid white;
 }
 
 .logo {
@@ -76,4 +77,207 @@ a {
 
 .logo img:nth-child(2) {
     margin-left: 5px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.area {
+    margin-left: 20px;
+}
+
+.area li {
+    width: 123px;
+    color: #7f7f7f;
+    height: 24px;
+    border: 1px solid #7f7f7f;
+    line-height: 24px;
+    background-color: white;
+}
+
+.area li a {
+    color: #7f7f7f;
+}
+
+.area ul>li {
+    position: relative;
+    float: left;
+    text-align: center;
+    margin-top: 38px;
+    margin-left: 10px;
+}
+
+.area ol {
+    display: none;
+    position: absolute;
+    transition: all .5s;
+    top: 24px;
+    left: -1px;
+}
+
+.area li:hover ol {
+    display: block;
+}
+
+.area li:hover {
+    background-color: #0068B7;
+    border: 1px solid #0068B7;
+}
+
+.area li:hover>a {
+    color: white;
+}
+
+.am-cf {
+    float: right;
+}
+
+.area ol li {
+    margin-bottom: -1px;
+}
+
+.header .head_up .ewm img {
+    width: 75px;
+}
+
+.header .head_up .ewm p {
+    margin: 0;
+    text-align: center;
+    font-size: 15px;
+    color: #333333;
+}
+
+.header .head_up .ewm {
+    float: right;
+    width: 75px;
+    margin-top: 15px;
+}
+
+.header .head_up .search {
+    width: 230px;
+    height: 38px;
+    float: right;
+    margin-top: 29px;
+    font-size: 25px;
+    color: #0068b7;
+    background-image: url("../image/tel.png");
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 35px;
+}
+
+.nav {
+    width: 100%;
+    background-color: #0068b7;
+    height: 50px;
+    top: 0;
+    left: 0;
+    z-index: 22;
+}
+
+.text-bt {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.tapBoxf {
+    background: #0068b7;
+    width: 100%
+}
+
+.tapBoxfn ul li {
+    float: left
+}
+
+.tapBoxfn ul li .tapa {
+    height: 50px;
+    display: block;
+    padding: 0 36px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.tapBoxfn ul .active {
+    background: #1c8dc7;
+}
+
+.tapBoxfn ul li:hover .tapa {
+    background: #1c8dc7;
+}
+
+.tapBoxfn ul li .m {
+    background: #1c8dc7;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 55;
+    display: none;
+}
+
+.tapBoxfn ul li .n {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.tapBoxfn ul li .l {
+    width: 1167px;
+    float: right;
+    text-align: left;
+}
+
+.tapBoxfn ul li .l dl {}
+
+.tapBoxfn ul li .l dd {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.tapBoxfn ul li .l dd:first-child {
+    margin-left: 35px;
+}
+
+.tapBoxfn ul li .l dd a {
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+    margin-top: 8px;
+    font-size: 16px
+}
+
+.tapBoxfn ul li .l dd:hover a {
+    background: #fff;
+    border-radius: 30px;
+    color: #0091db;
+}
+
+.tapBoxfn ul li:hover .m {
+    display: block;
+}
+
+.tapBoxfn ul li:nth-child(3):hover .l dl {
+    margin-left: 200px
+}
+
+.tapBoxfn ul li:nth-child(4):hover .l dl {
+    margin-left: 330px
+}
+
+.tapBoxfn ul li:nth-child(5):hover .l dl {
+    margin-left: 460px
+}
+
+.tapBoxfn ul li:nth-child(6):hover .l dl {
+    margin-left: 610px
+}
+
+.tapBoxfn ul li:nth-child(8):hover .l dl {
+    margin-left: 820px
+}
+
+.tapBoxfn ul li:last-child:hover .l dl {
+    margin-left: 900px
 }

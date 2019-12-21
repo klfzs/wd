@@ -1,8 +1,8 @@
 <?php
 namespace app\index\controller;
-use think\Controller;
+use app\common\controller\HomeBase;
 use think\Db;
-class Index extends Controller
+class Index extends HomeBase
 {
     public function index()
     {
