@@ -36,7 +36,6 @@ a {
 }
 
 .title_right {
-    line-height: 50px;
     float: right;
 }
 
@@ -396,6 +395,7 @@ li {
     display: inline-block;
     font-weight: bold;
     vertical-align: middle;
+    line-height: 50px;
 }
 
 .card_title {
