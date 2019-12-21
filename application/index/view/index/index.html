@@ -1,1 +1,41 @@
-{include file="common/header"} {include file="common/footer"}
+{include file="common/header"}
+<div style="background-color: #FAFAFA;">
+    <div class="layui-carousel" id="banner">
+
+        <div carousel-item>
+            {voList name="$slide" id="vo"}
+            <div>
+                <a href="{$vo['link']}">
+                    <img src="__STATIC__{$vo['image']}" height="400px">
+                </a>
+            </div>
+            {/voList}
+        </div>
+    </div>
+    <div class="news warp card">
+        <div class="card_title">
+            <div class="title_log am-fl">
+                <img src="__STATIC__/image/新闻@2x.png">
+                <h2>新闻资讯</h2>
+            </div>
+            <div class="title_right">
+                <a href="#">更多>></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        layui.use('carousel', function() {
+            var carousel = layui.carousel;
+            //建造实例
+            carousel.render({
+                elem: '#banner',
+                width: '100%', //设置容器宽度,
+                arrow: 'always',
+                interval: 3000,
+                height: '400px' //始终显示箭头
+                    //,anim: 'updown' //切换动画方式
+            });
+        });
+    </script>
+    {include file="common/footer"}
