@@ -22,12 +22,60 @@
                 <a href="#">更多>></a>
             </div>
         </div>
+        <ul>
+           
+            {volist name="recommend_list" id="vo"}
+           <li> <a href="/article/{$vo['id']}"><div class="title_li" style="width: 5px;height: 5px; border-radius:50% ; background-color: gray;float: left;margin-top: 8px;margin-right:2px ;" ></div><div style="float: left;">{$vo['title']}</div><div style="float: right;">{$vo['publish_time']}</div></li></a>
+            {/volist}
+        </ul>
     </div>
+    <div class="teat warp card">
+            <div class="card_title">
+                    <div class="title_log am-fl">
+                        <img src="__STATIC__/image/icon.png@2x.png">
+                        <h2>师资力量</h2>
+                    </div>
+                    <div class="card_title_conten">
+                        <ul>
+                            <li class="active">语文</li>
+                            <li>数学</li>
+                            <li>英语</li>
+                            <li>计算机</li>
+                        </ul>
+                    </div>
+                    <div class="title_right" style="line-height: 50px;">
+                        <a href="#">更多>></a>
+                    </div>
+             </div>
+        {volist name="teacher" id="vo1"}
+            <div class="card_content layui-carousel"{if condition="$key==0"} style="display: block;"{/if}  id="teacher{$key}" style="background-color: white;">
+                <div  carousel-item>
+                    {volist name="vo1" id="vo2"}
+                    <div>
+                        {volist name="vo2" id="vo3"}
+                            <div class="teacher_list">
 
+                                <img src="/static{$vo3['image']}" height="210px">
+                                <div style="text-align: center;padding: 14px;">
+                                    <span>{$vo3['username']}</span><span>{$vo3['major']}</span>
+                                </div>
+                            </div>
+
+                        {/volist}
+                    </div>
+                    {/volist}
+                </div>
+
+
+            </div>
+        {/volist}
+    </div>
+</div>
     <script>
-        layui.use('carousel', function() {
+        layui.use(['carousel','jquery'], function() {
             var carousel = layui.carousel;
             //建造实例
+            var $=layui.$
             carousel.render({
                 elem: '#banner',
                 width: '100%', //设置容器宽度,
@@ -36,6 +84,20 @@
                 height: '400px' //始终显示箭头
                     //,anim: 'updown' //切换动画方式
             });
+            carousel.render({
+                elem: '#teacher0',
+                width: '100%',//设置容器宽度,
+                interval: 3000,
+                height: '360px' //始终显示箭头
+                    //,anim: 'updown' //切换动画方式
+            });
+
+            $('.news li').hover(function () {
+            
+         this.getElementsByClassName('title_li')[0].style.backgroundColor='#0068b7'
+            },function () {
+                this.getElementsByClassName('title_li')[0].style.backgroundColor='gray'
+            })
         });
     </script>
     {include file="common/footer"}

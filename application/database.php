@@ -17,9 +17,9 @@ return [
     // 数据库名
     'database'        => 'www_cqzkedu_cn',
     // 用户名
-    'username'        => 'cqzkedu',
+    'username'        => 'root',
     // 密码
-    'password'        => '123456789',
+    'password'        => 'root',
     // 端口
     'hostport'        => '',
     // 连接dsn

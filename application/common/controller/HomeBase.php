@@ -51,10 +51,11 @@ class HomeBase extends Controller
      */
     protected function getRecommendList()
     {
-        $recommend_list = Db::name('article')->field(['id', 'cid', 'title', 'introduction', 'thumb', 'reading', 'publish_time'])->where(['cid' => 6])->order(['sort' => 'ASC'])->limit(5)->select();
+        $recommend_list = Db::name('article')->field(['id', 'cid', 'title', 'introduction', 'thumb', 'reading', 'publish_time'])->where(['cid' => 6])->order(['sort' => 'ASC'])->limit(12)->select();
         foreach ($recommend_list as &$value) {
             $value['title'] = $value['title'] ? mb_substr($value['title'], 0, 22, 'utf-8') : '';
         }
+    
         $this->assign('recommend_list', $recommend_list);
     }
 
