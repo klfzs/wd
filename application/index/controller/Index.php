@@ -111,7 +111,9 @@ class Index extends HomeBase
       //获取视频
 
       $video=db('video')->order('order','ASC')->limit(7)->select();
-      dump($video);
+      //获取教学点
+      $branch=db('branch')->limit(8)->select();
+      $this->assign('branch',$branch);
       $this->assign('video',$video);
       $this->assign('course',$course);
       $this->assign('student',$studentArry);
