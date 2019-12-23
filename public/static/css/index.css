@@ -403,97 +403,184 @@ li {
     height: 50px;
     border-bottom: 1px solid #cccccc;
 }
-.news ul{
-    margin-top:10px ;
-   
+
+.news ul {
+    margin-top: 10px;
 }
-.news li{
-   
+
+.news li {
     width: 530px;
-    padding-top:10px ;
-    padding-bottom:10px ;
-    border-bottom:1px dashed #cccccc ;
-   
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #cccccc;
 }
-.news li:nth-child(odd){
-    
+
+.news>ul>li:nth-child(odd) {
     float: left;
 }
-.news li:nth-child(2n)
-{
+
+.news>ul>li:nth-child(even) {
     float: right;
 }
-.news li:hover a
-{
+
+.news>ul>li:hover a {
     color: #0068b7;
-
 }
-.teat{
-    height: 450px;
 
+.teat {
+    height: 426px;
 }
-.card_title_conten{
+
+.card_title_conten {
     display: inline-block;
     font-weight: bold;
-    margin-left:330px;
-    margin-top:16px ;
-
+    margin-left: 330px;
+    margin-top: 16px;
 }
-.card_title_conten li{
+
+.card_title_conten li {
     cursor: pointer;
     font-size: 18px;
     text-align: center;
     margin-left: 30px;
     float: left;
     text-align: center;
-   
 }
-.card_title_conten li:hover{
-   color: #0068b7;
-   border-bottom:1px solid #0068b7;
-}
-.card_title_conten .active{
-    color: #0068b7;  
-    border-bottom:1px solid #0068b7;
-}
-.card_content{
-  
-   display: none; 
 
+.card_title_conten li:hover {
+    color: #0068b7;
+    border-bottom: 1px solid #0068b7;
 }
-.card_content{
+
+.card_title_conten .active {
+    color: #0068b7;
+    border-bottom: 1px solid #0068b7;
+}
+
+.card_content {
+    display: none;
+}
+
+.card_content {
     margin-top: 15px;
     display: block;
- 
- }
- .teacher_list{
+}
+
+.teacher_list {
     float: left;
     cursor: pointer;
+    vertical-align: middle;
     height: 273px;
-    border: 1px solid gray;
+    border: 1px solid #ECECEB;
+}
 
- }
- .teacher_list:hover{
+.teacher_list:hover {
     border-bottom: 2px solid #0068b7;
+}
 
-
- }
-.teacher_list:not(:first-child){
+.teacher_list:not(:first-child) {
     margin-left: 32px;
 }
-.teacher_list>div span:nth-child(1)
-{
+
+.teacher_list>div span:nth-child(1) {
     display: inline-block;
     padding: 5px;
     font-size: 20px;
     margin-right: 12px;
     color: gray;
 }
-.teacher_list>div span:nth-child(2)
-{
+
+.teacher_list>div span:nth-child(2) {
     display: inline-block;
     padding: 5px;
     font-size: 15px;
     color: gray;
 }
 
+.student {
+    height: 308px;
+}
+
+.student ul {
+    margin-top: 10px;
+}
+
+.course {
+    width: 210px;
+    height: 161px;
+    background-size: 100%;
+}
+
+.course_name {
+    padding-top: 63px;
+    text-align: center;
+}
+
+.course_name h2 {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 50px;
+    color: white;
+    height: 50px;
+    background-color: #69ABF4;
+    opacity: .8;
+}
+
+.course_price {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.course_price span:nth-child(1) {
+    font-size: 21px;
+    color: #FF8E42;
+    font-weight: bold;
+}
+
+.course_price span:nth-child(2) {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.card_content .teacher_list:hover div>span {
+    color: #69ABF4;
+}
+
+.video_left {
+    position: relative;
+    width: 444px;
+    overflow: hidden;
+}
+
+.video_in {
+    width: 444px;
+    height: 40px;
+    top: 300px;
+    background-color: #0068b7;
+    position: absolute;
+    opacity: .8;
+}
+
+.video_in_title h2 {
+    display: inline-block;
+    line-height: 40px;
+    color: white;
+    font-size: 16px;
+    margin-left: 12px;
+}
+
+.video_in_title span {
+    line-height: 40px;
+    float: right;
+    color: white;
+    font-size: 16px;
+    margin-right: 12px;
+}
+
+.video_in_paly {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 36%;
+    left: 42%;
+}

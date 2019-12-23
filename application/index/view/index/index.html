@@ -23,81 +23,309 @@
             </div>
         </div>
         <ul>
-           
+
             {volist name="recommend_list" id="vo"}
-           <li> <a href="/article/{$vo['id']}"><div class="title_li" style="width: 5px;height: 5px; border-radius:50% ; background-color: gray;float: left;margin-top: 8px;margin-right:2px ;" ></div><div style="float: left;">{$vo['title']}</div><div style="float: right;">{$vo['publish_time']}</div></li></a>
+            <li>
+                <a href="/article/{$vo['id']}">
+                    <div class="title_li" style="width: 5px;height: 5px; border-radius:50% ; background-color: gray;float: left;margin-top: 8px;margin-right:2px ;"></div>
+                    <div style="float: left;">{$vo['title']}</div>
+                    <div style="float: right;">{$vo['publish_time']}</div>
+                </a>
+            </li>
+
             {/volist}
         </ul>
     </div>
     <div class="teat warp card">
-            <div class="card_title">
-                    <div class="title_log am-fl">
-                        <img src="__STATIC__/image/icon.png@2x.png">
-                        <h2>师资力量</h2>
-                    </div>
-                    <div class="card_title_conten">
-                        <ul>
-                            <li class="active">语文</li>
-                            <li>数学</li>
-                            <li>英语</li>
-                            <li>计算机</li>
-                        </ul>
-                    </div>
-                    <div class="title_right" style="line-height: 50px;">
-                        <a href="#">更多>></a>
-                    </div>
-             </div>
+        <div class="card_title">
+            <div class="title_log am-fl">
+                <img src="__STATIC__/image/icon.png@2x.png">
+                <h2>师资力量</h2>
+            </div>
+            <div class="card_title_conten">
+                <ul>
+                    <li class="active">语文</li>
+                    <li>数学</li>
+                    <li>英语</li>
+                    <li>计算机</li>
+                </ul>
+            </div>
+            <div class="title_right" style="line-height: 50px;">
+                <a href="#">更多>></a>
+            </div>
+        </div>
         {volist name="teacher" id="vo1"}
-            <div class="card_content layui-carousel"{if condition="$key==0"} style="display: block;"{/if}  id="teacher{$key}" style="background-color: white;">
-                <div  carousel-item>
-                    {volist name="vo1" id="vo2"}
-                    <div>
-                        {volist name="vo2" id="vo3"}
-                            <div class="teacher_list">
+        <div class="card_content layui-carousel" {if condition="$key==0" } style="display: block;" {/if} id="teacher{$key}" style="background-color: white;">
+            <div carousel-item>
+                {volist name="vo1" id="vo2"}
+                <div>
+                    {volist name="vo2" id="vo3"}
+                    <div class="teacher_list">
 
-                                <img src="/static{$vo3['image']}" height="210px">
-                                <div style="text-align: center;padding: 14px;">
-                                    <span>{$vo3['username']}</span><span>{$vo3['major']}</span>
-                                </div>
-                            </div>
-
-                        {/volist}
+                        <img src="/static{$vo3['image']}" height="210px" width="100%">
+                        <div style="text-align: center;padding: 14px;">
+                            <span>{$vo3['username']}</span><span>{$vo3['major']}</span>
+                        </div>
                     </div>
+
                     {/volist}
                 </div>
-
-
+                {/volist}
             </div>
+
+
+        </div>
         {/volist}
     </div>
-</div>
-    <script>
-        layui.use(['carousel','jquery'], function() {
-            var carousel = layui.carousel;
-            //建造实例
-            var $=layui.$
-            carousel.render({
-                elem: '#banner',
-                width: '100%', //设置容器宽度,
-                arrow: 'always',
-                interval: 3000,
-                height: '400px' //始终显示箭头
-                    //,anim: 'updown' //切换动画方式
-            });
-            carousel.render({
-                elem: '#teacher0',
-                width: '100%',//设置容器宽度,
-                interval: 3000,
-                height: '360px' //始终显示箭头
-                    //,anim: 'updown' //切换动画方式
-            });
+    <div class="student warp card">
+        <div class="card_title">
+            <div class="title_log am-fl">
+                <img src="__STATIC__/image/icon2.png@2x.png">
+                <h2>课程设置</h2>
+            </div>
+            <div class="title_right" style="line-height: 50px;">
+                <a href="#">更多>></a>
+            </div>
+        </div>
+        <ul>
+            {volist name="course" id="vo"}
+            <li class="teacher_list" style="height: 213px;">
+                <a href="course/{$vo['id']}">
+                    <div class="course" style="background-image: url(__STATIC__{$vo['image']});">
+                        <div class="course_name">
+                            <h2>{$vo['course_name']}</h2>
+                        </div>
 
-            $('.news li').hover(function () {
-            
-         this.getElementsByClassName('title_li')[0].style.backgroundColor='#0068b7'
-            },function () {
-                this.getElementsByClassName('title_li')[0].style.backgroundColor='gray'
-            })
+                    </div>
+                    <div class="course_price">
+                        <span>{$vo['price']}</span> &nbsp;&nbsp;&nbsp;
+                        <span>原价:<del>{$vo['oldprice']}</del></span>
+
+                    </div>
+                </a>
+            </li>
+            {/volist}
+
+        </ul>
+    </div>
+    <div class="student warp card" style="height: 410px;">
+        <div class="card_title">
+            <div class="title_log am-fl">
+                <img src="__STATIC__/image/icon2.png@2x.png">
+                <h2>课程设置</h2>
+            </div>
+            <div class="title_right" style="line-height: 50px;">
+                <a href="#">更多>></a>
+            </div>
+        </div>
+        <div class="card_content layui-carousel" id="student" style="background-color: white;">
+            <div carousel-item>
+                {volist name="student" id="vo"}
+                <div>
+                    {volist name="vo" id="vo1"}
+                    <div class="teacher_list">
+
+                        <img src="/static{$vo1['img']}" height="210px" width="100%">
+                        <div style="text-align: center;padding: 14px;">
+                            <span>{$vo1['school']}</span><span>{$vo1['name']}</span>
+                        </div>
+                    </div>
+
+                    {/volist}
+                </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+    <div class="video warp card" style="height: 410px;">
+        <div class="card_title">
+            <div class="title_log am-fl">
+                <img src="__STATIC__/image/图标@2x.png">
+                <h2>精彩视频</h2>
+            </div>
+            <div class="title_right" style="line-height: 50px;">
+                <a href="#">更多>></a>
+            </div>
+        </div>
+        <div class="card_content">
+
+            <div class="video_left">
+                <img src="/static{$video[0]['thumb']}">
+                <div class="video_in">
+                    <div class="video_in_title">
+                        <h2>{$video[0]['title']}</h2>
+                        <span>8:10</span>
+
+                    </div>
+
+                </div>
+                <img class="video_in_paly" src="__STATIC__/image/a.png">
+                <div video_src='{$video[0]["src"]}' style="display: none;"></div>
+            </div>
+            <div class="video_right">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    layui.use(['carousel', 'jquery'], function() {
+        var carousel = layui.carousel;
+        //建造实例
+        var $ = layui.$
+        carousel.render({
+            elem: '#banner',
+            width: '100%', //设置容器宽度,
+            arrow: 'always',
+            interval: 3000,
+            height: '400px' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
         });
-    </script>
-    {include file="common/footer"}
+        carousel.render({
+            elem: '#student',
+            width: '100%', //设置容器宽度,
+            arrow: 'always',
+            interval: 3000,
+            height: '320px',
+            arrow: 'none' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
+        });
+        var teacher0 = carousel.render({
+            elem: '#teacher0',
+            width: '100%', //设置容器宽度,
+            interval: 3000,
+            height: '330px',
+            arrow: 'none' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
+        });
+        var teacher1 = carousel.render({
+            elem: '#teacher1',
+            width: '0%', //设置容器宽度,
+            interval: 3000,
+            height: '0',
+            arrow: 'none' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
+        });
+
+        var teacher2 = carousel.render({
+            elem: '#teacher2',
+            width: '0%', //设置容器宽度,
+            interval: 3000,
+            height: '0',
+            arrow: 'none' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
+        });
+
+        var teacher3 = carousel.render({
+            elem: '#teacher3',
+            width: '0', //设置容器宽度,
+            interval: 3000,
+            height: '0',
+            arrow: 'none' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
+        });
+
+        var teacher3 = carousel.render({
+            elem: 'student',
+            width: '100%', //设置容器宽度,
+            interval: 3000,
+            height: '360px',
+            arrow: 'none' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
+        });
+
+        $('.news li').hover(function() {
+
+            this.getElementsByClassName('title_li')[0].style.backgroundColor = '#0068b7'
+        }, function() {
+            this.getElementsByClassName('title_li')[0].style.backgroundColor = 'gray'
+        })
+        $('.card_title_conten ul>li').click(function() {
+            var major = this.innerText;
+            var index = $('.card_title_conten ul>li').index($('.card_title_conten .active'))
+            $('.card_title_conten .active').removeClass('active')
+
+            var name = eval('teacher' + index)
+            this.classList.add('active')
+
+            console.log(name)
+            name.reload({
+                elem: '#teacher' + index,
+                width: '0%',
+                height: '0%',
+                indicator: 'none',
+                arrow: 'none'
+
+            })
+            $('#teacher' + index).css('display', 'none');
+            switch (major) {
+                case '语文':
+                    console.log('调用');
+
+                    teacher0.reload({
+                        elem: '#teacher0',
+                        width: '100%', //设置容器宽度,
+                        interval: 3000,
+                        height: '330px',
+                        indicator: 'inside',
+                        arrow: 'none' //始终显示箭头
+                            //,anim: 'updown' //切换动画方式
+
+                    })
+                    $('#teacher0').css('display', 'block');
+                    break;
+                case '数学':
+
+                    teacher1.reload({
+                        elem: '#teacher1',
+                        width: '100%', //设置容器宽度,
+                        interval: 3000,
+                        height: '330px',
+                        indicator: 'inside',
+                        arrow: 'none' //始终显示箭头
+                            //,anim: 'updown' //切换动画方式
+
+
+                    })
+                    $('#teacher1').css('display', 'block');
+                    break;
+                case '英语':
+
+                    teacher2.reload({
+                        elem: '#teacher2',
+                        width: '100%', //设置容器宽度,
+                        interval: 3000,
+                        height: '330px',
+                        indicator: 'inside',
+                        arrow: 'none' //始终显示箭头
+                            //,anim: 'updown' //切换动画方式
+
+
+                    })
+                    $('#teacher2').css('display', 'block');
+                    break;
+                case '计算机':
+
+                    teacher3.reload({
+                        elem: '#teacher3',
+                        width: '100%', //设置容器宽度,
+                        interval: 3000,
+                        height: '330px',
+                        indicator: 'inside',
+                        arrow: 'none'
+                            //始终显示箭头
+
+                    })
+                    $('#teacher3').css('display', 'block');
+                    break;
+                default:
+                    break;
+            }
+
+
+
+        })
+    });
+</script>
+{include file="common/footer"}
