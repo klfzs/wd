@@ -5,7 +5,6 @@ namespace app\common\controller;
 use think\Cache;
 use think\Controller;
 use think\Db;
-use app\common\model\Category as CategoryModel;
 
 class HomeBase extends Controller
 {

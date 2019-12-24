@@ -1,0 +1,104 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding:1px ;">
+    <div class="main_title warp titlecard">
+
+        <div class="main_title_log am-fl">
+            <img src="__STATIC__/image/新闻@2x.png">
+            <h2>新闻资讯</h2>
+        </div>
+        <div class="title_right">
+            <ol class="breadcrumb-list">
+                <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                <a href='/' class='crumb'>首页</a> {if !empty($parent) }&gt;
+                <a href='javascript:;' class='crumb'>{$parent['name']}</a> {/if} {if !empty($current) } &gt; <a href='javascript:;' class='crumb'>{$current['name']}</a> {/if}
+        </div>
+    </div>
+    <div class="news_list warp">
+        <div class="news_list_left">
+            <ul>
+                {volist name="news" id="vo"}
+                <li>
+                    <a href="/article/{$vo['id']}">
+
+                        <img src="__STATIC__{$vo['thumb']}" style="float: left;display: block;width: 182px;height: 132px;" />
+                        <div class="news_list_left_main">
+                            <h3>{$vo['title']}</h3>
+                            <div style="height: 73px; overflow: hidden;width: 100%;margin-bottom: 11px;text-overflow:ellipsis;">
+                                <p>{$vo['introduction']}</p>
+                            </div>
+                            <div><span><img src="">{$vo['create_time']}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;来源:{$vo['author']}</div>
+                        </div>
+                    </a>
+                </li>
+                {/volist}
+
+            </ul>
+            <div style="clear: both;"></div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;"> {$news->render()}</div>
+
+
+        </div>
+
+
+
+        <div class="news_list_right">
+            <div class="news_search">
+                <div class="search_in">
+                    <form action="" method="post">
+                        <input type="text" placeholder="请输入新闻关键词" />
+                        <input type="submit" value="搜索" />
+                    </form>
+
+
+                </div>
+                <div class="search_hot">
+                    <h3>热门搜索</h3>
+                    <img src="__STATIC__/image/hot.png" />
+                    <ul>
+                        {volist name="hot" id="vo"}
+                        <li>
+                            <a href="/article/{$vo['id']}">
+                                {switch name="$key+1"}
+                                    {case value="1"}<img src="__STATIC__/image/hot1.jpg" style="display: inline-block;"/>{/case}
+                                    {case value="2"}<img src="__STATIC__/image/hot2.jpg" style="display: inline-block;"/>{/case}
+                                    {case value="3"}<img src="__STATIC__/image/hot3.jpg" style="display: inline-block;"/>{/case}
+                                    {default /}
+                                    <div style="height: 5px;width: 24px;display: inline-block;"><div class="title_li" style="width: 5px; height: 5px; border-radius: 50%; background-color: gray; float: left;margin-left: 10px;"></div></div>
+                                {/switch}
+                                <div style="display: inline-block;width: 250px;vertical-align:middle;">
+                                <p >{$vo['title']}</p>
+                            </div>
+                            </a>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+            </div>
+            <div class="news_new news_search search_hot">
+                <h3>最新资讯</h3>
+                <img src="__STATIC__/image/xin.png" />
+                <ul>
+                    {volist name="new" id="vo"}
+                    <li>
+                        <a href="/article/{$vo['id']}">
+                            <div style="height: 5px;width: 24px;display: inline-block;">
+                                <div class="title_li" style="width: 5px; height: 5px; border-radius: 50%; background-color: gray; float: left;margin-left: 10px;"></div>
+                            </div>
+                            <div style="display: inline-block;width: 250px;vertical-align:middle;">
+                                <p>{$vo['title']}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+    </div>
+
+</div>
+
+<div style="clear: both;"></div>
+{include file="common/footer"}
