@@ -693,8 +693,78 @@ li {
 }
 
 .videoplay_main_title h2 {
-    margin-top: 5px;
+    margin-top: 14px;
     font-weight: bold;
     color: white;
     margin-left: 15px;
+}
+
+.zxwd {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    margin-left: -400px;
+    width: 800px;
+    height: 320px;
+    background-color: white;
+}
+
+.zxwd_title {
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    background-color: #0068B7;
+}
+
+.zxwd_title h2 {
+    line-height: 60px;
+    color: white;
+}
+
+.zxwd_content {
+    padding-left: 60px;
+}
+
+.zxwd_content_wd {
+    width: 90%;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.zxwd_content_log {
+    padding-right: 50px;
+    line-height: 100px;
+    float: left;
+}
+
+.zxwd_content_wd ul {
+    margin-top: 36px;
+    float: left;
+}
+
+.zxwd_content_wd span {
+    line-height: 100px;
+    display: block;
+    float: left;
+}
+
+.zxwd_content_main {
+    cursor: pointer;
+    margin-top: 34px;
+    margin-left: 20px;
+    border: 1px solid #E6E6E6;
+    width: 112px;
+    height: 27px;
+    text-align: center;
+    float: left;
+    line-height: 27px;
+}
+
+.zxwd_content_item span {
+    text-align: center;
+}
+
+.zxwd_content_main:hover {
+    color: white;
+    background-color: #0068B7;
 }
