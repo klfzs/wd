@@ -13,6 +13,8 @@ return [
     '__pattern__' => [
         'name' => '\w+',
     ],
-    'News/:id'=>'News/Index'
-
+    'News/:id'=>'News/Index',
+    'Search'=>'News/Search',
+    'School/:id'=>'School/index',
+    'Grow/:id'=>'School/Grow'
 ];

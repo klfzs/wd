@@ -1,0 +1,70 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;">
+    <img src="__STATIC__/image/school_banner.jpg" width="100%" height="250px" />
+    <div class="school warp">
+        <div class="school_left">
+            <a href="/school/2">
+                <div class="school_left_main">
+                    <div class="school_left_num">
+                        <h2>01
+
+                        </h2>
+                    </div>
+                    <div class="school_left_title">
+                        <h2>学校简介</h2>
+                    </div>
+
+                </div>
+            </a>
+            <a href="/grow/3">
+                <div class="school_left_main">
+                    <div class="school_left_num active">
+                        <h2>02
+                            <div style="width: 25px; height: 2px; background-color: #0068B7;position: absolute;left: 35px;"></div>
+                        </h2>
+                    </div>
+                    <div class="school_left_title active_bg">
+                        <h2>发展历程</h2>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="school_left_main">
+                    <div class="school_left_num">
+                        <h2>03
+
+                        </h2>
+                    </div>
+                    <div class="school_left_title">
+                        <h2>校长寄语</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="school_right">
+            <div class="main_title schoolwarp card" style="padding-top: 0;border-bottom: 1px solid #e6e6e6;">
+
+                <div class="main_title_log am-fl">
+                    <h2 style="font-weight: normal;line-height: 60px;">发展历程</h2>
+
+                </div>
+                <div class="title_right">
+                    <ol class="breadcrumb-list">
+                        <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                        <a href='/' class='crumb'>首页</a> {if !empty($parent) }&gt;
+                        <a href='javascript:;' class='crumb'>{$parent['name']}</a> {/if} {if !empty($current) } &gt; <a href='javascript:;' class='crumb'>{$current['name']}</a> {/if}
+                </div>
+            </div>
+
+            <div class="school_right_main">
+
+
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+
+{include file="common/footer"}

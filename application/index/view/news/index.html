@@ -45,8 +45,8 @@
         <div class="news_list_right">
             <div class="news_search">
                 <div class="search_in">
-                    <form action="" method="post">
-                        <input type="text" placeholder="请输入新闻关键词" />
+                    <form action="/search" method="post">
+                        <input type="text" placeholder="请输入新闻关键词" name="active" />
                         <input type="submit" value="搜索" />
                     </form>
 
@@ -93,6 +93,7 @@
                     {/volist}
                 </ul>
             </div>
+            <img src="__STATIC__/image/weclass.jpg" style="margin-top: 10px;">
         </div>
 
         <div style="clear: both;"></div>

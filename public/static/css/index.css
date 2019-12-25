@@ -768,3 +768,282 @@ li {
     color: white;
     background-color: #0068B7;
 }
+
+.main_title {
+    height: 60px;
+}
+
+.main_title_log h2 {
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+.titlecard {
+    margin-top: 17px;
+    padding-top: 8px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    padding-right: 20px;
+    background-color: white;
+    box-shadow: 0 0 6px white;
+}
+
+.breadcrumb-list {
+    font-size: 13px;
+    padding: 15px 0;
+    margin: 0;
+    float: right;
+    margin-right: 20px;
+}
+
+.news_list {
+    margin-top: 20px;
+}
+
+.news_list_left {
+    float: left;
+    width: 877px;
+    background-color: white;
+    box-shadow: 0 0 6px white;
+}
+
+.news_list_right {
+    float: left;
+    margin-left: 21px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 0 6px white;
+}
+
+.search_hot {
+    margin-top: 6px;
+}
+
+.news_list_left>ul:nth-child(1) li {
+    height: 150px;
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E6E6E6;
+    overflow: hidden;
+}
+
+.news_list_left>ul:nth-child(1) li:hover>a>div {
+    color: #0068B7;
+}
+
+.news_list_left_main {
+    margin-left: 12px;
+    color: #7f7f7f;
+    width: 589px;
+    float: left;
+}
+
+.news_list_left_main h3 {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 12px;
+}
+
+.news_list_left_main p {
+    line-height: 19px;
+    text-overflow: ellipsis;
+}
+
+.news_list_left_main>div:nth-child(2) {
+    margin-top: 8px;
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination a {
+    text-decoration: none;
+    margin-right: 0px!important;
+}
+
+ul.pagination li {
+    display: inline;
+}
+
+.disabled,
+.pagination .active,
+.pagination li a {
+    color: black;
+    float: left;
+    padding: 4px 8px;
+    text-decoration: none;
+    transition: .3;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+.pagination .active {
+    background-color: #0068B7;
+    color: white;
+    border: 1px solid #0068B7;
+}
+
+.disabled {
+    background-color: rgba(236, 236, 236, 0.78);
+}
+
+ul.pagination a.active {
+    background-color: #0068B7;
+    color: white;
+    border: 1px solid #0068B7;
+}
+
+ul.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.news_search {
+    padding-left: 20px;
+    padding-right: auto;
+    padding-top: 30px;
+}
+
+.search_in input[type=text] {
+    padding: 8px;
+    width: 194px;
+    border: 1px solid #E6E6E6;
+}
+
+.search_in input[type=submit] {
+    cursor: pointer;
+    padding: 8px;
+    margin-left: -4px;
+    border: 1px solid #E6E6E6;
+    background-color: white;
+    color: #0068B7;
+}
+
+.search_hot h3 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.search_hot ul>li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    overflow: hidden;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.search_hot ul>li p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search_hot ul>li p:hover {
+    color: #0068B7;
+}
+
+.news_new {
+    margin-top: 30px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+
+.school {
+    margin-top: 17px;
+    padding-top: 8px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    padding-right: 20px;
+    height: 504px;
+}
+
+.school_left {
+    float: left;
+}
+
+.school_left_main {
+    position: relative;
+    width: 268px;
+    height: 70px;
+    margin-bottom: 12px;
+    color: gray;
+    box-shadow: 0 0 6px white;
+    background-color: white;
+}
+
+.school_left_num {
+    float: left;
+    height: 100%;
+    text-align: center;
+    width: 100px;
+}
+
+.school_left_title {
+    text-align: center;
+    float: left;
+    width: 168px;
+    height: 100%;
+}
+
+.school_left_title h2 {
+    line-height: 70px;
+}
+
+.school_left_num h2 {
+    font-size: 30px;
+    margin-top: 16px;
+    padding-bottom: 8px;
+    border-right: 1px solid #E6E6E6;
+}
+
+.active h2 {
+    color: #0068B7;
+}
+
+.active_bg {
+    background-color: #0068B7;
+    color: white;
+}
+
+.school_right {
+    float: right;
+    width: 867px;
+    height: 95%;
+    background-color: white;
+    box-shadow: 0 0 6px white;
+}
+
+.schoolwarp {
+    margin: 0 auto;
+    position: relative;
+}
+
+.school_right_main {
+    margin-top: 24px;
+    width: 100%;
+    height: 503px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.school_right_left {
+    width: 500px;
+}
+
+.school_right_left {
+    float: left;
+    line-height: 25px;
+}
+
+.school_right_left p {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.school_right_right {
+    float: right;
+}
