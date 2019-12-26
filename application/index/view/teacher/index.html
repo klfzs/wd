@@ -1,0 +1,50 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding-top: 1px;">
+
+    <div class="main_title warp titlecard">
+
+        <div class="main_title_log am-fl">
+            <img src="__STATIC__/image/icon.png@2x.png">
+            <h2>师资力量</h2>
+        </div>
+        <div class="title_right">
+            <ol class="breadcrumb-list">
+                <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                <a href='/' class='crumb'>首页</a> {if !empty($parent) }&gt;
+                <a href='javascript:;' class='crumb'>{$parent['name']}</a> {/if} {if !empty($current) } &gt; <a href='javascript:;' class='crumb'>{$current['name']}</a> {/if}
+        </div>
+
+    </div>
+    <div class="teacher_title">
+        <h2>科目：</h2>
+        <ul>
+            <li class="active_bg"><span>全部</span></li>
+            <li><span>语文</span></li>
+            <li><span>数学</span></li>
+            <li><span>英语</span></li>
+            <li><span>计算机</span></li>
+        </ul>
+    </div>
+    <div class="card_main warp card" style="box-sizing:border-box;">
+        <div class="card_main">
+            {volist name="teacher" id="vo3"}
+            <div class="teacher_list" style="margin-right: 26px;margin-left: 0px;">
+
+                <img src="/static{$vo3['image']}" height="210px" width="100%">
+                <div style="text-align: center;padding: 14px;">
+                    <span>{$vo3['username']}</span><span>{$vo3['major']}</span>
+                </div>
+            </div>
+
+            {/volist}
+
+        </div>
+        <div style="clear: both;"></div>
+
+    </div>
+
+
+</div>
+
+{include file="common/footer"}

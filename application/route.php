@@ -16,5 +16,7 @@ return [
     'News/:id'=>'News/Index',
     'Search'=>'News/Search',
     'School/:id'=>'School/index',
-    'Grow/:id'=>'School/Grow'
+    'Grow/:id'=>'School/Grow',
+    'Word/:id'=>'School/Word',
+    'Teacher/[:id]'=>'Teacher/index'
 ];
