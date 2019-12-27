@@ -1,0 +1,53 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding-top: 1px;">
+
+    <div class="main_title warp titlecard">
+
+        <div class="main_title_log am-fl">
+            <img src="__STATIC__/image/icon2.png@2x.png">
+            <h2>课程设置</h2>
+        </div>
+        <div class="title_right">
+            <ol class="breadcrumb-list">
+                <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                <a href='/' class='crumb'>首页</a> {if !empty($parent) }&gt;
+                <a href='javascript:;' class='crumb'>{$parent['name']}</a> {/if} {if !empty($current) } &gt; <a href='javascript:;' class='crumb'>{$current['name']}</a> {/if}
+        </div>
+
+    </div>
+    <div class="card_main warp card clear" style="box-sizing:border-box;">
+        <div class="card_main">
+            <ul>
+                {volist name="course" id="vo"}
+                <div style="height:217px ;float: left;margin-top: 12px;" class="clear">
+                    <li class="teacher_list" style="height: 213px; margin-left: 0; margin-right: 25px;">
+                        <a href="course/{$vo['id']}">
+                            <div class="course" style="background-image: url(__STATIC__{$vo['image']}); background-size:100% 100%">
+                                <div class="course_name">
+                                    <h2>{$vo['course_name']}</h2>
+                                </div>
+
+                            </div>
+                            <div class="course_price">
+                                <span>{$vo['price']}</span> &nbsp;&nbsp;&nbsp;
+                                <span>原价:<del>{$vo['oldprice']}</del></span>
+
+                            </div>
+                        </a>
+                    </li>
+                </div>
+                {/volist}
+
+            </ul>
+            <div class="clear"></div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;padding-bottom: 5px;"> </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+<div style="height:28px; width: 100%; background-color: #FAFAFA;margin: 0 auto;"></div>
+{include file="common/footer"}

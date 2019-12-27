@@ -3,35 +3,36 @@ namespace app\index\controller;
 use app\common\controller\HomeBase;
 use app\common\model\Category as CategoryModel;
 use think\Db;
-class Teacher extends HomeBase
+class Courses extends HomeBase
 {
     protected function _initialize()
     {
         parent::_initialize();
-        $this->assign('nav_id', 7);
+        $this->assign('nav_id', 13);
     }
     public function index()
     {
         $cid = $this->request->param('id/d');
-        $teacher=null;
+        $category_model = new CategoryModel();
         if(empty($cid))
         {
-            $category_model = new CategoryModel();
-            $current = $category_model->get(5);
+          
+            $current = $category_model->get(10);
             if (empty($current)) {
                 return false;
             }
             $path = explode(',', $current['path']);
-            $pid = !empty($path[1]) ? $path[1] : $cid;
+            $pid = !empty($path[1]) ? $path[1] : '';
            
             // 当前分类顶级父类
             $parent = $category_model->get($pid);
+            $course=db('course')->field('id,course_name,price,oldprice,image')->paginate(15);
 
-          $teacher=db('teacher')->field('id,username,major,image')->paginate(15);
-         
-        }else{
-            $category_model = new CategoryModel();
-            $id=5+$cid;
+
+        }else
+        {
+
+            $id=10+$cid;
             $current = $category_model->get($id);
             if (empty($current)) {
                 return false;
@@ -41,14 +42,14 @@ class Teacher extends HomeBase
            
             // 当前分类顶级父类
             $parent = $category_model->get($pid);
-            $teacher=db('teacher')->where('position',$cid)->field('id,username,major,image')->paginate(15);
-
+            $course=db('course')->field('id,course_name,price,oldprice,image')->where('id',$cid)->paginate(15);
 
         }
-        $this->assign('position',$cid);
+          
+       
         $this->assign('parent', $parent);
+        $this->assign('course',$course);
         $this->assign('current',$current);
-        $this->assign('teacher',$teacher);
         return $this->fetch();
 
 

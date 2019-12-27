@@ -19,31 +19,37 @@
     <div class="teacher_title">
         <h2>科目：</h2>
         <ul>
-            <li class="active_bg"><span>全部</span></li>
-            <li><span>语文</span></li>
-            <li><span>数学</span></li>
-            <li><span>英语</span></li>
-            <li><span>计算机</span></li>
+
+            <li {if empty($position) }class="active_bg" {/if}> <a href="/teacher.html"><span>全部</span></a></li>
+
+            <li {if $position==1 }class="active_bg" {/if}><a href="/teacher/1.html"><span>语文</span></a></li>
+            <li {if $position==2 }class="active_bg" {/if}><a href="/teacher/2.html"><span>数学</span></a></li>
+            <li {if $position==3 }class="active_bg" {/if}><a href="/teacher/3.html"><span>英语</span></a></li>
+            <li {if $position==4 }class="active_bg" {/if}><a href="/teacher/4.html"><span>计算机</span></a></li>
         </ul>
+        <div class="clear"></div>
     </div>
-    <div class="card_main warp card" style="box-sizing:border-box;">
+    <div class="card_main warp card clear" style="box-sizing:border-box;">
         <div class="card_main">
             {volist name="teacher" id="vo3"}
-            <div class="teacher_list" style="margin-right: 26px;margin-left: 0px;">
+            <div style="height:284px ;float: left;margin-top: 12px;" class="clear">
+                <div class="teacher_list" style="margin-right: 23px;margin-left: 0px;margin-top: 10px;">
 
-                <img src="/static{$vo3['image']}" height="210px" width="100%">
-                <div style="text-align: center;padding: 14px;">
-                    <span>{$vo3['username']}</span><span>{$vo3['major']}</span>
+                    <img src="/static{$vo3['image']}" height="210px" width="100%">
+                    <div style="text-align: center;padding: 14px;">
+                        <span>{$vo3['username']}</span><span>{$vo3['major']}</span>
+                    </div>
                 </div>
             </div>
-
             {/volist}
+            <div class="clear"></div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;padding-bottom: 5px;"> {$teacher->render()}</div>
 
         </div>
         <div style="clear: both;"></div>
 
     </div>
-
+    <div style="height:28px;  width: 1200px; background-color: #FAFAFA;margin: 0 auto;"></div>
 
 </div>
 

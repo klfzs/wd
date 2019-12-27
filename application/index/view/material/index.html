@@ -1,0 +1,79 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding:1px ;">
+
+    <div class="main_title warp titlecard">
+
+        <div class="main_title_log am-fl">
+            <img src="__STATIC__/image/zl.png">
+            <h2>资料下载</h2>
+        </div>
+        <div class="title_right">
+            <ol class="breadcrumb-list">
+                <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                <a href='/' class='crumb'>首页</a> {if !empty($parent) }&gt;
+                <a href='javascript:;' class='crumb'>{$parent['name']}</a> {/if} {if !empty($current) } &gt; <a href='javascript:;' class='crumb'>{$current['name']}</a> {/if}
+        </div>
+
+    </div>
+    <div class="teacher_title">
+        <h3>精确查找：</h3>
+        <ul>
+
+            <li style="width: 100px; margin-top: 8px;">
+                年份：<select>
+                    <option value="">全部</option>
+                </select>
+
+            </li>
+
+
+            <li style="width: 100px; margin-top: 8px;">
+                院校：<select>
+                    <option value="">全部</option>
+                </select>
+
+            </li>
+
+            <li style="width: 100px; margin-top: 8px;">
+                科目：<select>
+                    <option value="">全部</option>
+                </select>
+
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+
+    <div class="news_list warp">
+        <div class="news_list_left">
+            <table width='100%' style="border: 1px solid #ccc;" cellpadding=0 cellspacing=0>
+                <tr>
+                    <th>资料名称</th>
+                    <th>领取方式</th>
+                    <th>点击量</th>
+                </tr>
+                <tr>
+                    <td>2018年</td>
+                    <td>领取方式</td>
+                    <td>点击量</td>
+                </tr>
+
+            </table>
+            <div style="clear: both;"></div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;"> </div>
+            <div style="height:28px; width: 100%; background-color: #FAFAFA;margin: 0 auto;"></div>
+
+        </div>
+
+
+
+        {include file="common/left_news"}
+
+        <div style="clear: both;"></div>
+    </div>
+
+</div>
+
+<div style="clear: both;"></div>
+{include file="common/footer"}

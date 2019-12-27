@@ -15,6 +15,8 @@ class News extends HomeBase
        $new=db('article')->field('id,title')->where('cid',6)->order('create_time DESC')->limit(6)->select();
        $this->assign('hot',$hot);
        $this->assign('new',$new);
+           $this->assign('nav_id', 1);
+
     }
     public function index()
     {
@@ -41,12 +43,12 @@ class News extends HomeBase
     {
         $data = $this->request->param('active');
         $category_model = new CategoryModel();
-        $current = $category_model->get(6);
+        $current = $category_model->get(1);
         if (empty($current)) {
             return false;
         }
         $path = explode(',', $current['path']);
-        $pid = !empty($path[1]) ? $path[1] : 6;
+        $pid = !empty($path[1]) ? $path[1] :1;
         // 当前分类顶级父类
         $parent = $category_model->get($pid);
        

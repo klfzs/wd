@@ -5,6 +5,11 @@ use app\common\model\Category as CategoryModel;
 use think\Db;
 class School extends HomeBase
 {
+    protected function _initialize()
+    {
+        parent::_initialize();
+        $this->assign('nav_id', 2);
+    }
     public function index()
     {
         $cid = $this->request->param('id/d');
