@@ -25,9 +25,10 @@ class Question extends HomeBase
         $parent = $category_model->get($pid);
        //获取问题
         $question=db('question')->alias('a')->join('user u','a.user_id=u.id')->join('comment c','c.qid=a.id','LEFT')->field('u.image,a.id,u.username,a.title,a.create_time,a.status,a.click,a.num')->paginate(10);
-        dump($question);
 
-        //获取文章列表
+        //获取热门问题
+        $hot=db('question')->order('click DESC')->field('id,title')->limit(10)->select();
+        $this->assign('hot',$hot);
         $this->assign('question',$question);
         $this->assign('current',$current);
          $this->assign('parent', $parent);

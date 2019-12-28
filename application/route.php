@@ -22,5 +22,6 @@ return [
     'Courses/[:id]'=>'Courses/Index',
     'Material'=>'Material/index',
     'File/:id'=>'Material/File',
-    'Question'=>'Question/index'
+    'Question'=>'Question/index',
+    'About'=>'About/index'
 ];

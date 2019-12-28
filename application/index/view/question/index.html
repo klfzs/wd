@@ -21,7 +21,7 @@
                     {volist name='question' id='vo'}
 
                     <li>
-                        <a href="#">
+                        <a href="/question/{$vo['id']}">
                             <img src="__STATIC__{$vo['image']}" style="display: block;width: 60px; height: 60px;border-radius: 50%;float: left;">
                             <div style="float: left; margin-left: 10px;">
                                 <h3>{$vo['title']}</h3>
@@ -47,12 +47,34 @@
                 </ul>
             </div>
             <div style="clear: both;"></div>
-            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;"> </div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;"> {$question->render()}</div>
             <div style="height:28px; width: 100%; background-color: #FAFAFA;margin: 0 auto;"></div>
 
         </div>
 
+        <div class="news_list_right" style="min-height: 620px;">
+            <div class="question_left">
+                <a href="#">
+                    <img src="__STATIC__/image/question_icon.png">
+                    <span style="color: white;font-size: 37px;margin-top: 12px; vertical-align: middle;">马上提问</span>
+                </a>
+            </div>
+            <div class="news_new search_hot" style="padding-top: 12px;padding-right: 29px;padding-left: 29px;">
+                <h4 style="margin:0 auto; width:56px">热门问题</h4>
 
+                <ul style="margin-top: 20px;">
+                    {volist name="hot" id="vo"}
+                    <li style="border-bottom: 0px; background-color: #EFF8FE;margin-bottom: 10px;">
+                        <a href="#">
+                            <div style="display: inline-block;width: 250px;vertical-align:middle;">
+                                <p>{$vo['title']}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
 
 
 
