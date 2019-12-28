@@ -17,52 +17,75 @@
 
     </div>
     <div class="teacher_title">
-        <h3>精确查找：</h3>
-        <ul>
+        <form action="" method="post">
+            <h3>精确查找：</h3>
+            <ul>
 
-            <li style="width: 100px; margin-top: 8px;">
-                年份：<select>
+                <li style="width: 100px; margin-top: 8px;">
+                    年份：<select name="year">
                     <option value="">全部</option>
+                        {foreach $year as $vo}
+                    <option value="{$vo['year']}">{$vo['year']}</option>
+                        {/foreach}
                 </select>
 
-            </li>
+                </li>
 
 
-            <li style="width: 100px; margin-top: 8px;">
-                院校：<select>
+                <li style="width: 150px; margin-top: 8px;">
+                    院校：<select name="school">
                     <option value="">全部</option>
+                    {volist name='school' id='vo'}
+                    <option value="{$vo['id']}">{$vo['name']}</option>
+                    {/volist}
                 </select>
 
-            </li>
+                </li>
 
-            <li style="width: 100px; margin-top: 8px;">
-                科目：<select>
+                <li style="width: 100px; margin-top: 8px;">
+                    科目：<select name="course">
                     <option value="">全部</option>
+                    <option value="1">语文</option>
+                    <option value="2">数学</option>
+                    <option value="3">英语</option>
                 </select>
 
-            </li>
-        </ul>
-        <div class="clear"></div>
+                </li>
+                <li style="width: 100px; margin-top: 8px;">
+                    <input type='submit' value='提交' style="width: 60px;height: 23px;background-color: #0068b7; color: white;border: 1px solid #0068b7;" />
+
+                </li>
+
+            </ul>
+            <div class="clear"></div>
     </div>
-
+    </form>
     <div class="news_list warp">
-        <div class="news_list_left">
+        <div class="news_list_left" style="padding-top: 31px;box-sizing: border-box;padding-left: 12px;padding-right: 12px;">
             <table width='100%' style="border: 1px solid #ccc;" cellpadding=0 cellspacing=0>
                 <tr>
-                    <th>资料名称</th>
-                    <th>领取方式</th>
-                    <th>点击量</th>
+                    <th style="width: 400px;">
+                        <h3>资料名称</h3>
+                    </th>
+                    <th>
+                        <h3>领取方式</h3>
+                    </th>
+                    <th>
+                        <h3>点击量</h3>
+                    </th>
                 </tr>
+                {volist name="data" id='vo'}
                 <tr>
-                    <td>2018年</td>
-                    <td>领取方式</td>
-                    <td>点击量</td>
+                    <td><img src="__STATIC__/image/doc.png" width="25px" style="margin-right: 25px;">{$vo['name']}</td>
+                    <td><a href="/file/{$vo['id']}" style="color: #0068b7;">{if $vo['receive']==0}免费领取{else /}会员领取{/if}</a></td>
+                    <td style="color: #0068b7;">{$vo['clicks']}</td>
                 </tr>
+                {/volist}
 
             </table>
             <div style="clear: both;"></div>
-            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;"> </div>
-            <div style="height:28px; width: 100%; background-color: #FAFAFA;margin: 0 auto;"></div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;"> {$data->render()}</div>
+
 
         </div>
 

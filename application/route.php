@@ -20,5 +20,7 @@ return [
     'Word/:id'=>'School/Word',
     'Teacher/[:id]'=>'Teacher/index',
     'Courses/[:id]'=>'Courses/Index',
-    'Material'=>'Material/index'
+    'Material'=>'Material/index',
+    'File/:id'=>'Material/File',
+    'Question'=>'Question/index'
 ];

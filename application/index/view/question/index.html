@@ -1,0 +1,66 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding:1px ;">
+    <div class="main_title warp titlecard">
+
+        <div class="main_title_log am-fl">
+            <img src="__STATIC__/image/w@2x.png">
+            <h2>有问必答</h2>
+        </div>
+        <div class="title_right">
+            <ol class="breadcrumb-list">
+                <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                <a href='/' class='crumb'>首页</a> {if !empty($parent) }&gt;
+                <a href='javascript:;' class='crumb'>{$parent['name']}</a> {/if} {if !empty($current) } &gt; <a href='javascript:;' class='crumb'>{$current['name']}</a> {/if}
+        </div>
+    </div>
+    <div class="news_list warp">
+        <div class="news_list_left">
+            <div class="question">
+                <ul>
+                    {volist name='question' id='vo'}
+
+                    <li>
+                        <a href="#">
+                            <img src="__STATIC__{$vo['image']}" style="display: block;width: 60px; height: 60px;border-radius: 50%;float: left;">
+                            <div style="float: left; margin-left: 10px;">
+                                <h3>{$vo['title']}</h3>
+                                <div style="margin-top: 6px;"><span style="color: #0068B7;">{$vo['username']}</span><span style="color: gray;">{$vo['create_time']}&nbsp;&nbsp;提问</span></div>
+                            </div>
+                            <div style="float: right;">
+                                {if $vo['status']==0}
+                                <div style="padding: 8px; background-color: #F8B500;color: white;padding-left: 12px; padding-right: 12px;float: left;margin-right: 120px;">待解决</div>
+                                {else /}
+                                <div style="padding: 8px; background-color: #0068B7;color: white;padding-left: 12px; padding-right: 12px;float: left;margin-right: 120px;">已解决</div>
+                                {/if}
+
+
+                                <div style="float: left;margin-top: 15px;margin-right: 15px;">
+                                    <img src="__STATIC__/image/dz.png"><span style="margin-right: 12px;vertical-align: middle;">{$vo['click']}</span>
+                                    <img src="__STATIC__/image/hd.png"><span style="vertical-align: middle;">{$vo['num']}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    {/volist}
+                </ul>
+            </div>
+            <div style="clear: both;"></div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;"> </div>
+            <div style="height:28px; width: 100%; background-color: #FAFAFA;margin: 0 auto;"></div>
+
+        </div>
+
+
+
+
+
+        <div style="clear: both;"></div>
+    </div>
+
+</div>
+<script>
+</script>
+<div style="clear: both;"></div>
+{include file="common/footer"}
