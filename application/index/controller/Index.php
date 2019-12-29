@@ -2,6 +2,7 @@
 namespace app\index\controller;
 use app\common\controller\HomeBase;
 use think\Db;
+use think\Request;
 use app\common\model\Category as CategoryModel;
 class Index extends HomeBase
 {
@@ -162,8 +163,9 @@ class Index extends HomeBase
     }
     public function studentlist()
     {
+      $time= $this->request->param('year');
       $category_model = new CategoryModel();
-      $current = $category_model->get(24);
+      $current = $category_model->get(25);
       if (empty($current)) {
           return false;
       }
@@ -173,7 +175,18 @@ class Index extends HomeBase
       // 当前分类顶级父类
       $parent = $category_model->get($pid);
       //获取视频
-    $student=db('student')->paginate(20);
+      if(!empty($time))
+      {
+        $student=db('student')->where('time',$time)->paginate(20,false,[
+          'query' => Request::instance()->param(),//不丢失已存在的url参数
+      ]);
+      }else{
+        $student=db('student')->paginate(20);
+      }
+    
+    $year=db('student')->field('time')->group('time')->select();
+    $this->assign('year',$year);
+    $this->assign('time',$time);
       $this->assign('student',$student);
       $this->assign('parent', $parent);
       $this->assign('current',$current);

@@ -1,0 +1,51 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding:1px ;">
+
+    <div class="news_list warp">
+
+        <div class="news_list_left" style="padding:12px;box-sizing: border-box;">
+            <div class="main_title">
+
+                <div class="main_title_log am-fl">
+                    <img src="__STATIC__/image/新闻@2x.png">
+                    <h2>新闻资讯</h2>
+                </div>
+                <div class="title_right">
+                    <ol class="breadcrumb-list" style="margin-right: 0;">
+                        <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                        <a href='/' class='crumb'>首页</a>&gt;
+                        <a href='/news/1.html' class='crumb'>新闻资讯</a> &gt;
+                        <a href='javascript:;' class='crumb' style="color: #0068b7;">{$article['title']}</a>
+                </div>
+
+            </div>
+            <div style="width: 100%;height: 1px; background-color: #DBD9D9;float: left;"></div>
+            <div class="article_title">
+                <h2>{$article['title']}</h2>
+                <div style="margin-top: 20px;">
+                    <img src="__STATIC__/image/time.png"><span style="vertical-align: middle;color: gray;margin-left: 6px;">{$article['create_time']}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="color: gray;">来源：{$article['author']}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="__STATIC__/image/eye.png"><span style="vertical-align: middle;color: gray;margin-left: 6px;">{$article['reading']}</span>
+                </div>
+            </div>
+            <div class="article_main">
+                {$article['content']}
+                <div>
+                    {if !empty($befor)}
+                    <span><a href="/article/{$befor['id']}"><div class="article_btn">上一篇</div>{$befor['title']}</a></span>{/if}<br/><br/> {if !empty($after)} <span><a href="/article/{$after['id']}"><div class="article_btn">下一篇</div>{$after['title']}</a></span>{/if}
+
+                </div>
+            </div>
+        </div>
+
+
+
+        {include file="common/left_news"}
+
+        <div style="clear: both;"></div>
+    </div>
+
+</div>
+
+<div style="clear: both;"></div>
+{include file="common/footer"}

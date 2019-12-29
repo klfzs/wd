@@ -27,5 +27,6 @@ return [
     'Contact'=>'About/Contact',
     'videolist'=>'Index/VideoList',
     'Branchlist'=>'Index/Branchlist',
-    'Studentlist'=>'Index/Studentlist'
+    'Studentlist'=>'Index/Studentlist',
+    'Article/:id'=>'News/article'
 ];

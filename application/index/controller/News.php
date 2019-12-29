@@ -59,6 +59,20 @@ class News extends HomeBase
         $this->assign('parent', $parent);
         return  $this->fetch('index');
     }
+    public function article()
+    {
+        $id = $this->request->param('id/d');
+    
+        $data=db('article')->where('id',$id)->find();
+        db('article')->where('id',$id)->setInc('reading');
+        $after=db('article')->field('id,title')->where('id','>',$id)->order("id", "asc")->find();;
+        $befor=db('article')->field('id,title')->where('id','<',$id)->order("id", "desc")->find();
+
+        $this->assign('article',$data);
+        $this->assign('after',$after);
+        $this->assign('befor',$befor);
+        return $this->fetch();
+    }
 
 
 

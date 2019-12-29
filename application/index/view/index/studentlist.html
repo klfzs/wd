@@ -1,0 +1,65 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding-top: 1px;">
+
+    <div class="main_title warp titlecard">
+
+        <div class="main_title_log am-fl">
+            <img src="/static/image/icon1.png@2x.png">
+            <h2>学员风采</h2>
+        </div>
+        <div class="title_right">
+            <ol class="breadcrumb-list">
+                <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                <a href='/' class='crumb'>首页</a> {if !empty($parent) }&gt;
+                <a href='javascript:;' class='crumb'>{$parent['name']}</a> {/if} {if !empty($current) } &gt; <a href='javascript:;' class='crumb'>{$current['name']}</a> {/if}
+        </div>
+        <div style="width: 100%;height: 1px; background-color: #DBD9D9;float: left;"></div>
+    </div>
+    <div class="main_title warp" style="background-color: white;padding-top: 20px; box-sizing: border-box;padding-left: 20px;">
+        <span style="float: left;margin-right: 12px;">精确查找：</span>
+        <span style="float: left;">年份：</span>
+        <div>
+            <form action="" method="post" id="form">
+                <select name="year" id="year">
+                    <option value="">全部</option>
+                {volist name="year" id="vo"}
+                <option value="{$vo['time']}"{if $time==$vo['time']}selected{/if}>{$vo['time']}</option>
+                {/volist}
+            </select>
+            </form>
+        </div>
+    </div>
+    <div class="card_main warp card clear" style="box-sizing:border-box;">
+        <div class="card_main">
+
+            {volist name="student" id="vo1"}
+            <div style="height:284px ;float: left;margin-top: 12px;" class="clear">
+                <div class="teacher_list" style="margin-right: 23px;">
+
+                    <img src="/static{$vo1['img']}" height="210px" width="100%">
+                    <div style="text-align: center;padding: 14px;">
+                        <span>{$vo1['school']}</span><span>{$vo1['name']}</span>
+                    </div>
+                </div>
+            </div>
+            {/volist}
+            <div class="clear"></div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;padding-bottom: 5px;"> {$student->render()}</div>
+
+        </div>
+        <div style="clear: both;"></div>
+
+    </div>
+    <div style="height:28px;  width: 1200px; background-color: #FAFAFA;margin: 0 auto;"></div>
+
+</div>
+<script>
+    $('#year').change(function() {
+        console.log('调用');
+        $('#form').submit();
+
+
+    })
+</script>
+{include file="common/footer"}
