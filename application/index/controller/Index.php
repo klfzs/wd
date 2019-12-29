@@ -2,6 +2,7 @@
 namespace app\index\controller;
 use app\common\controller\HomeBase;
 use think\Db;
+use app\common\model\Category as CategoryModel;
 class Index extends HomeBase
 {
 
@@ -120,5 +121,62 @@ class Index extends HomeBase
       $this->assign('student',$studentArry);
       $this->assign('teacher',$teaarr);
       return  $this->fetch();
+    }
+    public function videoList()
+    {
+      $category_model = new CategoryModel();
+      $current = $category_model->get(23);
+      if (empty($current)) {
+          return false;
+      }
+      $path = explode(',', $current['path']);
+      $pid = !empty($path[1]) ? $path[1] : '';
+     
+      // 当前分类顶级父类
+      $parent = $category_model->get($pid);
+      //获取视频
+      $video=db('video')->order('order','ASC')->paginate(16);
+      $this->assign('video',$video);
+      $this->assign('parent', $parent);
+      $this->assign('current',$current);
+      return $this->fetch();
+    }
+    public function branchlist()
+    {
+      $category_model = new CategoryModel();
+      $current = $category_model->get(24);
+      if (empty($current)) {
+          return false;
+      }
+      $path = explode(',', $current['path']);
+      $pid = !empty($path[1]) ? $path[1] : '';
+     
+      // 当前分类顶级父类
+      $parent = $category_model->get($pid);
+      //获取视频
+    $branch=db('branch')->paginate(16);
+      $this->assign('branch',$branch);
+      $this->assign('parent', $parent);
+      $this->assign('current',$current);
+      return $this->fetch();
+    }
+    public function studentlist()
+    {
+      $category_model = new CategoryModel();
+      $current = $category_model->get(24);
+      if (empty($current)) {
+          return false;
+      }
+      $path = explode(',', $current['path']);
+      $pid = !empty($path[1]) ? $path[1] : '';
+     
+      // 当前分类顶级父类
+      $parent = $category_model->get($pid);
+      //获取视频
+    $student=db('student')->paginate(20);
+      $this->assign('student',$student);
+      $this->assign('parent', $parent);
+      $this->assign('current',$current);
+      return $this->fetch();
     }
 }

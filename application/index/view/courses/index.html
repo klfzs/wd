@@ -30,8 +30,8 @@
 
                             </div>
                             <div class="course_price">
-                                <span>{$vo['price']}</span> &nbsp;&nbsp;&nbsp;
-                                <span>原价:<del>{$vo['oldprice']}</del></span>
+                                <span style="color:#FF8E42 ;">{$vo['price']}</span> &nbsp;&nbsp;&nbsp;
+                                <span style="color: gray;">原价:<del>{$vo['oldprice']}</del></span>
 
                             </div>
                         </a>
@@ -41,7 +41,7 @@
 
             </ul>
             <div class="clear"></div>
-            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;padding-bottom: 5px;"> </div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;padding-bottom: 5px;"> {$course->render()}</div>
         </div>
 
 

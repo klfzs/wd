@@ -1,0 +1,50 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding-top: 1px;">
+
+    <div class="main_title warp titlecard">
+
+        <div class="main_title_log am-fl">
+            <img src="/static/image/图标@2x.png">
+            <h2>精彩视频</h2>
+        </div>
+        <div class="title_right">
+            <ol class="breadcrumb-list">
+                <img src="__STATIC__/image/icon.png"> 当前位置：
+
+                <a href='/' class='crumb'>首页</a> {if !empty($parent) }&gt;
+                <a href='javascript:;' class='crumb'>{$parent['name']}</a> {/if} {if !empty($current) } &gt; <a href='javascript:;' class='crumb'>{$current['name']}</a> {/if}
+        </div>
+
+    </div>
+    <div class="card_main warp card clear" style="box-sizing:border-box;">
+        <div class="card_main">
+            <div class="video_main" style="width: 100%;">
+                <ul>
+                    {volist name="video" id="vo"}
+                    <li>
+                        <img src="/static{$vo['thumb']}" width="100%">
+                        <div class="video_in">
+                            <div class="video_in_title">
+                                <h2>{$vo['title']}</h2>
+                                <span>8:10</span>
+
+                            </div>
+
+                        </div>
+                        <img class="video_in_paly" src="__STATIC__/image/a.png" width="38px">
+                        <div video_src='{$vo["src"]}' style="display: none;"></div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;padding-bottom: 5px;"> {$video->render()}</div>
+        </div>
+
+
+    </div>
+
+
+</div>
+<div style="height:28px; width: 100%; background-color: #FAFAFA;margin: 0 auto;"></div>
+{include file="common/footer"}

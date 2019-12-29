@@ -23,5 +23,9 @@ return [
     'Material'=>'Material/index',
     'File/:id'=>'Material/File',
     'Question'=>'Question/index',
-    'About'=>'About/index'
+    'About'=>'About/index',
+    'Contact'=>'About/Contact',
+    'videolist'=>'Index/VideoList',
+    'Branchlist'=>'Index/Branchlist',
+    'Studentlist'=>'Index/Studentlist'
 ];

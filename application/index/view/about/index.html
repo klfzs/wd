@@ -16,7 +16,7 @@
 
                 </div>
             </a>
-            <a href="/school/2 ">
+            <a href="/contact.html">
                 <div class="school_left_main ">
                     <div class="school_left_num ">
                         <h2>02
@@ -31,7 +31,7 @@
             </a>
         </div>
 
-        <div class="school_right ">
+        <div class="school_right">
             <div class="main_title schoolwarp card " style="padding-top: 0;border-bottom: 1px solid #e6e6e6; ">
 
                 <div class="main_title_log am-fl ">
@@ -64,19 +64,18 @@
                     </div>
                     <span style="margin:0 auto;display: block;font-size: 17px;width: 153px;color: gray;">Recruitment post</span>
                 </div>
-                <ul>
+                <ul class="job">
+                    {volist name="job" id='vo'}
                     <li>
-                        <h2></h2>
+                        <h2>{$vo['title']}</h2>
                         <div>
-                            <p></p>
+                            {$vo['demand']}
                         </div>
                         <span>了解更多>></span>
                     </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {/volist}
                 </ul>
+                <div style="clear: both;"></div>
             </div>
         </div>
         <div style="clear: both;"></div>
