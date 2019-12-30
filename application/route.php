@@ -28,5 +28,6 @@ return [
     'videolist'=>'Index/VideoList',
     'Branchlist'=>'Index/Branchlist',
     'Studentlist'=>'Index/Studentlist',
-    'Article/:id'=>'News/article'
+    'Article/:id'=>'News/article',
+    'Teacherin/:id'=>'Teacher/teacherIn'
 ];

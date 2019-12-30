@@ -54,6 +54,21 @@ class Teacher extends HomeBase
 
 
     }
+    public function teacherIn()
+    {
+        $id = $this->request->param('id/d');
+        $teacher=db('teacher')->where('id',$id)->find();
+        $courses=db('courses_teacher')->where('tid',$id)->select();
+        $coursesarr=[];
+        foreach ($courses as $v) {
+    
+            $coursesarr[]=db('course')->where('id',$v['cid'])->find();
+        }
+        dump($coursesarr);
+        $this->assign('teacher',$teacher);
+        $this->assign('coursesarr',$coursesarr);
+       return $this->fetch();
+    }
    
 }
 

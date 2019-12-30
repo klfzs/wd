@@ -60,12 +60,14 @@
                 {volist name="vo1" id="vo2"}
                 <div>
                     {volist name="vo2" id="vo3"}
-                    <div class="teacher_list">
 
-                        <img src="/static{$vo3['image']}" height="210px" width="100%">
-                        <div style="text-align: center;padding: 14px;">
-                            <span>{$vo3['username']}</span><span>{$vo3['major']}</span>
-                        </div>
+                    <div class="teacher_list">
+                        <a href="/teacherin/{$vo3['id']}">
+                            <img src="/static{$vo3['image']}" height="210px" width="100%">
+                            <div style="text-align: center;padding: 14px;">
+                                <span style="display: inline-block;padding: 5px;font-size: 20px;margin-right: 12px;">{$vo3['username']}</span><span>{$vo3['major']}</span>
+                            </div>
+                        </a>
                     </div>
 
                     {/volist}
