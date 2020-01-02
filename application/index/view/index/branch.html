@@ -4,28 +4,30 @@
     <div class="main_title warp titlecard">
 
         <div class="main_title_log am-fl">
-            <img src="__STATIC__/image/zl.png">
-            <h2>师资力量</h2>
+            <img src="/static/image/icon3.png@2x.png">
+            <h2>校区展示</h2>
         </div>
         <div class="title_right">
             <ol class="breadcrumb-list">
                 <img src="__STATIC__/image/icon.png"> 当前位置：
 
                 <a href='/' class='crumb'>首页</a>&gt;
-                <a href='/teacher.html' class='crumb'>师资力量</a> &gt;
-                <a href='javascript:;' class='crumb'>{$teacher['username']}</a>
+                <a href='/Branchlist.html' class='crumb'>校区展示</a> &gt;
+                <a href='javascript:;' class='crumb'>{$branch['title']}</a>
         </div>
 
     </div>
-    <div class="teacher_title" style="height: 450px;">
-        <div class="teacher_in">
-            <img src="__STATIC__{$teacher['image']}" height="100%" />
+    <div class="teacher_title" style="height: 393px;">
+        <div class="teacher_in" style="height: 345px;">
+            <img src="__STATIC__{$branch['thumb']}" height="100%" width="430px" />
             <div class="teacher_in_right">
-                <h2>{$teacher['username']}</h2>
+                <h1>{$branch['title']}</h1>
+                <p>{$branch['introduction']}</p>
+                <p style="margin-top: 126px;">
+                    <div style="display: inline-block;margin-right: 30px;color: gray;"> <img src="__STATIC__/image/address-icon.png" alt="" style="margin-right: 12px;">{$branch['address']}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                <span>{$teacher['major']}</span>
-                <p>{$teacher['content']}</p>
-
+                    <div style="display: inline-block;color: gray;"> <img src="__STATIC__/image/tel-icon.png" alt="" style="margin-right: 12px;">{$branch['phone']}</div>
+                </p>
             </div>
         </div>
     </div>
@@ -33,34 +35,29 @@
         <div class="teacher_courses_left">
             <div class="teacher_courses_tite">
                 <div style="width: 120px;height: 100%; background-color: #0068B7;border-radius: 0 230px 0px 0px;float: left;">
-                    <h2 style="color: white;line-height: 35px;margin-left: 12px;">相关课程</h2>
+                    <h2 style="color: white;line-height: 35px;margin-left: 12px;">校区分布</h2>
                 </div>
-                <span style="float: left;line-height: 35px;font-size: 18px;margin-left: 31px;color: #C8C8C8;">Related courses</span>
-                <a href="/courses.html"><span style="float: right;line-height: 35px;margin-right: 12px;">更多>></span></a>
+                <span style="float: left;line-height: 35px;font-size: 18px;margin-left: 31px;color: #C8C8C8;">Campus distribution</span>
             </div>
             <div class="teacher_courses_main" style="width: 711px;">
-                <ul>
-                    {volist name="coursesarr" id="vo"}
-                    <div style="height:217px ;float: left;margin-top: 12px;" class="clear">
-                        <li class="teacher_list" style="height: 213px; margin-left: 0; margin-right: 25px;">
-                            <a href="/course/{$vo['id']}">
-                                <div class="course" style="background-image: url(__STATIC__{$vo['image']}); background-size:100% 100%">
-                                    <div class="course_name">
-                                        <h2>{$vo['course_name']}</h2>
-                                    </div>
-
-                                </div>
-                                <div class="course_price">
-                                    <span style="color:#FF8E42 ;">{$vo['price']}</span> &nbsp;&nbsp;&nbsp;
-                                    <span style="color: gray;">原价:<del>{$vo['oldprice']}</del></span>
-
-                                </div>
-                            </a>
+                {volist name='branchlist' id='vo'}
+                <div class="branch_left">
+                    <span style="float: left;">{$key}</span>
+                    <ul>
+                        {volist name="vo" id="vo1"}
+                        <li>
+                            <h4 style="color: gray;cursor: pointer;">{$vo1.title}</h4>
+                            <div class="xuanfu">
+                                <div style="float: left; margin-left: 15px;margin-top: 4px;color: #0068B7;"><img src="__STATIC__/image/address-icon-blue.png" alt="" style="margin-right: 10px;">{$vo1.address}</div>
+                                <div style="clear: left;"></div>
+                                <div style="float: left; margin-left: 15px; margin-top: 4px;color: #0068B7;"><img src="__STATIC__/image/tel-icon-blue.png" alt="" style="margin-right: 10px;">{$vo1.phone}</div>
+                            </div>
                         </li>
-                    </div>
-                    {/volist}
-
-                </ul>
+                        {/volist}
+                    </ul>
+                </div>
+                <div style="clear: both;"></div>
+                {/volist}
 
                 <div style="clear: both;"></div>
             </div>
@@ -166,6 +163,18 @@
         });
 
     });
+</script>
+<script>
+    $('.branch_left li').hover(function() {
+
+
+        $(this).children('h4').css('color', '#0068B7');
+        $(this).children('.xuanfu').fadeIn(500);
+
+    }, function() {
+        $(this).children('h4').css('color', 'gray');
+        $(this).children('.xuanfu').fadeOut(500);
+    })
 </script>
 <div style="clear: both;"></div>
 {include file="common/footer"}

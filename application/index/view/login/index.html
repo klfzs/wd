@@ -1,0 +1,118 @@
+{include file="common/userheader"}
+<div class="main">
+    <div class="login_main">
+        <div class="login_conter">
+            <div class="login_left">
+                <img src="__STATIC__/image/Signin.jpg" height="100%" width="550px" />
+            </div>
+            <div class="login_right">
+                <div style="margin:0 auto;width: 390px;">
+                    <div class="login_log">
+                        <img src="/static/image/logo2.png">
+                    </div>
+                    <div class="qiehuan">
+                        <button style=" border-radius: 10px 0px 0px 10px; background-color: #0068B7;color: white;">登录</button>
+                        <a href="/logon"><button style=" border-radius: 0px 10px 10px 0px;cursor: pointer;">注册</button></a>
+                    </div>
+                    <div class="login_form">
+                        <input type="text" width="100%" placeholder="手机号/用户名" style="background-image: url(__STATIC__/image/icon1.png);background-repeat: no-repeat;background-position: 11px;" name="username" required>
+                        <input type="password" width="100%" placeholder="密码" style="background-image: url(__STATIC__/image/icon2.png);background-repeat: no-repeat;background-position: 11px;" name="password" required>
+                        <input type="button" value="登录">
+                    </div>
+                    <div style="margin-top: 20px;color: gray;">
+                        <label for="xczdld">
+                        <input type="checkbox" value="1" id="xczdld" style="vertical-align: middle;" name="zddl"/>下次自动登录
+                    </label>
+                        <a href="" style="color:#0068B7;float: right;">忘记密码？</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+<script>
+    $('.login_form input[type=button]').click(function() {
+        //获取用户名
+        var username = $.trim($('.login_form input[name=username]').val());
+        //获取密码
+        var password = $.trim($('.login_form input[name=password]').val());
+        //获取长时间登录
+        var loagin = $('.login_right input[name=zddl]').is(":checked");
+        var login
+        if (loagin == true) {
+            login = 1;
+
+        } else {
+            login = 0;
+        }
+        $.ajax({
+            url: 'login/login',
+            type: 'post',
+            data: {
+                'username': username,
+                'password': password,
+                'login': login
+            },
+            success: function(data) {
+                console.log(data);
+
+                if (data.status == 1) {
+                    console.log("调用");
+
+                    layer.msg(data.message, {
+                        icon: 6
+                    });
+                    window.location.href = "/"
+                }
+            }
+
+
+
+        })
+
+
+
+    })
+</script>
+<div class="footer">
+    <div class="footer_main">
+        <div class="footer_log am-fl">
+            <img src="__STATIC__/image/foot-logo.png" alt="文登" />
+        </div>
+        <div class="footer_list am-fl">
+            <ul>
+                <li><a href="#">学校简介</a></li>
+                <li><a href="#">广告合作</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">新闻咨询</a></li>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">网站地图</a></li>
+                <li><a href="#">免责声明</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="footer_em am-fl">
+            <img src="__STATIC__/image/qrcode_for_gh_9531463fa668_258.jpg" alt="文登二维码" style="float: left;" />
+            <div class="am-fl">
+                <p style="font-size: 16px;">全国咨询热线</p>
+                <p>023-6582-3501</p>
+                <button>在线咨询</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<script src="__STATIC__/js/public.js"></script>
+
+</body>
+
+</html>

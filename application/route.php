@@ -29,5 +29,12 @@ return [
     'Branchlist'=>'Index/Branchlist',
     'Studentlist'=>'Index/Studentlist',
     'Article/:id'=>'News/article',
-    'Teacherin/:id'=>'Teacher/teacherIn'
+    'Teacherin/:id'=>'Teacher/teacherIn',
+    'Message'=>'index/message',
+    'Course/:id'=>'Courses/course',
+    'teacher/details'=>'About/teacherDetails',
+    'branch/:id'=>'Index/branch',
+    'login'=>'Login/index',
+    'login/login'=>'Login/login',
+    '/logon'=>'Login/logon'
 ];

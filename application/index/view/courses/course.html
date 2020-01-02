@@ -4,28 +4,34 @@
     <div class="main_title warp titlecard">
 
         <div class="main_title_log am-fl">
-            <img src="__STATIC__/image/zl.png">
-            <h2>师资力量</h2>
+            <img src="/static/image/icon2.png@2x.png">
+            <h2>课程设置</h2>
         </div>
         <div class="title_right">
             <ol class="breadcrumb-list">
                 <img src="__STATIC__/image/icon.png"> 当前位置：
 
                 <a href='/' class='crumb'>首页</a>&gt;
-                <a href='/teacher.html' class='crumb'>师资力量</a> &gt;
-                <a href='javascript:;' class='crumb'>{$teacher['username']}</a>
+                <a href='/teacher.html' class='crumb'>课程设置</a> &gt;
+                <a href='javascript:;' class='crumb'>{$course['course_name']}</a>
         </div>
 
     </div>
     <div class="teacher_title" style="height: 450px;">
         <div class="teacher_in">
-            <img src="__STATIC__{$teacher['image']}" height="100%" />
-            <div class="teacher_in_right">
-                <h2>{$teacher['username']}</h2>
+            <img src="__STATIC__{$course['image']}" height="100%" />
+            <div class="teacher_in_right" style="width: 594px;">
+                <h1>{$course['course_name']}</h1>
+                <div style="max-height: 98px;overflow: hidden;width: 100%;">
+                    <p style="text-overflow: ellipsis;">{$course['introduction']}</p>
+                </div>
+                <p style="height: 120px;overflow: hidden;"><span style="color: #0068B7;">课程周期:</span>{$course['course_title']}</p>
+                <div class="course_title">
+                    <span style="font-size: 30px;color:#FF7800 ;">{$course['price']}元</span>
+                    <span><del style="color: gray;font-size: 14px;">原价：{$course['oldprice']}</del></span>
+                    <button>在线预约</button>
 
-                <span>{$teacher['major']}</span>
-                <p>{$teacher['content']}</p>
-
+                </div>
             </div>
         </div>
     </div>
@@ -33,35 +39,13 @@
         <div class="teacher_courses_left">
             <div class="teacher_courses_tite">
                 <div style="width: 120px;height: 100%; background-color: #0068B7;border-radius: 0 230px 0px 0px;float: left;">
-                    <h2 style="color: white;line-height: 35px;margin-left: 12px;">相关课程</h2>
+                    <h2 style="color: white;line-height: 35px;margin-left: 12px; ">课程介绍</h2>
                 </div>
-                <span style="float: left;line-height: 35px;font-size: 18px;margin-left: 31px;color: #C8C8C8;">Related courses</span>
-                <a href="/courses.html"><span style="float: right;line-height: 35px;margin-right: 12px;">更多>></span></a>
+                <span style="float: left;line-height: 35px;font-size: 18px;margin-left: 31px;color: #C8C8C8; ">Course introduction</span>
+
             </div>
             <div class="teacher_courses_main" style="width: 711px;">
-                <ul>
-                    {volist name="coursesarr" id="vo"}
-                    <div style="height:217px ;float: left;margin-top: 12px;" class="clear">
-                        <li class="teacher_list" style="height: 213px; margin-left: 0; margin-right: 25px;">
-                            <a href="/course/{$vo['id']}">
-                                <div class="course" style="background-image: url(__STATIC__{$vo['image']}); background-size:100% 100%">
-                                    <div class="course_name">
-                                        <h2>{$vo['course_name']}</h2>
-                                    </div>
-
-                                </div>
-                                <div class="course_price">
-                                    <span style="color:#FF8E42 ;">{$vo['price']}</span> &nbsp;&nbsp;&nbsp;
-                                    <span style="color: gray;">原价:<del>{$vo['oldprice']}</del></span>
-
-                                </div>
-                            </a>
-                        </li>
-                    </div>
-                    {/volist}
-
-                </ul>
-
+                {$course['content']}
                 <div style="clear: both;"></div>
             </div>
 
@@ -88,6 +72,24 @@
 
         <div style="clear: both;"></div>
     </div>
+    <div class="teacher_courses" style="margin-bottom: 40px;">
+        <div class="teacher_courses_left" style="width: 100%;">
+            <div class="teacher_courses_tite ">
+                <div style="width: 120px;height: 100%; background-color: #0068B7;border-radius: 0 230px 0px 0px;float: left;">
+                    <h2 style="color: white;line-height: 35px;margin-left: 12px;">报名须知</h2>
+                </div>
+                <span style="float: left;line-height: 35px;font-size: 18px;margin-left: 31px;color: #C8C8C8;">Application notes</span>
+
+            </div>
+            <div class="teacher_courses_main" style="width: 711px;">
+                {$course['content']}
+            </div>
+
+        </div>
+
+    </div>
+
+    <div style="clear: both; "></div>
 </div>
 
 
@@ -149,7 +151,7 @@
         //监听提交
 
         form.on('submit(demo1)', function(data) {
-
+            layer.msg('调用');
             $.ajax({
                 type: 'POST',
                 url: '/message',
@@ -167,5 +169,5 @@
 
     });
 </script>
-<div style="clear: both;"></div>
+<div style="clear: both; "></div>
 {include file="common/footer"}

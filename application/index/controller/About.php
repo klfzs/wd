@@ -48,6 +48,12 @@ class About extends HomeBase
         $this->assign('current',$current);
         return $this->fetch();
     }
+    public function teacherDetails()
+    {
+        $id = $this->request->param();
+        $job=db('job')->where('id',$id['id'])->find();
+        return json($job);
+    }
 
 
 

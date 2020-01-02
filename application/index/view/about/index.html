@@ -71,15 +71,56 @@
                         <div>
                             {$vo['demand']}
                         </div>
-                        <span>了解更多>></span>
+                        <span data-id="{$vo['id']}">了解更多>></span>
+
+
+
                     </li>
+
                     {/volist}
+
                 </ul>
                 <div style="clear: both;"></div>
             </div>
         </div>
         <div style="clear: both;"></div>
+
     </div>
 </div>
+<script>
+    $('.job span').click(function() {
 
+        var id = $(this).attr('data-id');
+        $.ajax({
+            url: '/teacher/details',
+            type: 'post',
+            data: {
+                id: id
+            },
+            success: function(data) {
+                console.log(data)
+                var html = '<div class="videoplay"><div class="job_details">' +
+                    '<div class="job_details_title">' +
+                    '   <h2>' + data.title + '</h2>' +
+                    '</div>' +
+                    '<h2>岗位职责：</h2>' +
+                    '<p>' + data.Duty + '</p>' +
+                    '<h2>任职要求：</h2>' +
+                    '<p>' + data.demand + '</p>' +
+                    ' <h2>福利待遇：</h2>' +
+                    '<p>' + data.pay + '</p>' +
+                    '<p style="margin-top: 20px;">公司地址：沙坪坝沙正街欣阳广场G栋1301&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系方式400-000-000</p>' +
+                    '<div class="job_clear"></div>' +
+                    '</div></div>'
+                $('.main').append(html);
+
+            }
+
+
+        })
+
+
+
+    })
+</script>
 {include file="common/footer"}

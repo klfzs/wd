@@ -64,7 +64,6 @@ class Teacher extends HomeBase
     
             $coursesarr[]=db('course')->where('id',$v['cid'])->find();
         }
-        dump($coursesarr);
         $this->assign('teacher',$teacher);
         $this->assign('coursesarr',$coursesarr);
        return $this->fetch();

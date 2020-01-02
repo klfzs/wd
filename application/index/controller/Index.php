@@ -192,4 +192,38 @@ class Index extends HomeBase
       $this->assign('current',$current);
       return $this->fetch();
     }
+    public function message()
+    {
+      $data= $this->request->param();
+      $rec=db('message')->insert($data);
+      if($rec==1)
+      {
+          return json(['type'=>'1','message'=>'报名成功']);
+      } else
+      {
+        return json(['type'=>'0','message'=>'报名失败']);
+
+      }
+    }
+    public function branch()
+    {
+      $data= $this->request->param('id');
+      $branch=db('branch')->where('id',$data)->find();
+
+
+   
+      //获取所有地区
+      $add=db('branch_add')->select();
+      //获取每个校区的地址
+      //
+
+    
+      foreach ($add as $v) {
+      
+        $addarr[$v['addr']]=db('branch')->where('area',$v['id'])->field('title,address,phone')->select();
+      }
+      $this->assign('branch',$branch);
+      $this->assign('branchlist',$addarr);
+     return $this->fetch();
+    }
 }

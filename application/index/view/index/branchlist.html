@@ -20,13 +20,15 @@
         <div class="card_main">
             {volist name="branch" id="vo3"}
             <div style="height:284px ;float: left;margin-top: 12px;" class="clear">
-                <div class="teacher_list" style="margin-right: 23px;margin-left: 0px;margin-top: 10px;">
+                <a href="/branch/{$vo3['id']}">
+                    <div class="teacher_list" style="margin-right: 23px;margin-left: 0px;margin-top: 10px;">
 
-                    <img src="/static{$vo3['thumb']}" height="210px" width="100%">
-                    <div style="text-align: center;padding: 14px;">
-                        <span>{$vo3['title']}</span>
+                        <img src="/static{$vo3['thumb']}" height="210px" width="100%">
+                        <div style="text-align: center;padding: 14px;">
+                            <span>{$vo3['title']}</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             {/volist}
             <div class="clear"></div>

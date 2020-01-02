@@ -55,6 +55,13 @@ class Courses extends HomeBase
 
 
     }
+    public function course()
+    {
+        $id = $this->request->param('id/d');
+        $course=db('course')->where('id',$id)->find();
+        $this->assign('course',$course);
+        return $this->fetch();
+    }
    
 }
 
