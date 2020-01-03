@@ -36,5 +36,17 @@ return [
     'branch/:id'=>'Index/branch',
     'login'=>'Login/index',
     'login/login'=>'Login/login',
-    '/logon'=>'Login/logon'
+    'logon'=>'Login/logon',
+    'login/logon'=>'Login/zc',
+    'user'=>'user/index',
+    'user/sex'=>'user/sex',
+    'user/addr'=>'user/addr',
+    'user/zili'=>'user/zili',
+    'user/account'=>'user/account',
+    'user/email'=>'user/email',
+    'user/emailedit'=>'user/emailedit',
+    'user/phone'=>'user/phone',
+    'user/phoneedit'=>'user/phoneedit',
+    'user/password'=>'user/password',
+    'user/passwordedit'=>'user/passwordedit'
 ];

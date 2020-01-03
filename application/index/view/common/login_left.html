@@ -1,0 +1,17 @@
+<div class="user_left">
+    <div class="user_log">
+        <img src="__STATIC__{$user['image']}">
+        <h3>{$user['username']}</h3>
+        <a href="/user/zili"><button {if $index==6} style="color: #0068B7;border: 1px solid #0068B7;"{/if}>完善资料</button></a>
+    </div>
+    <div class="user_list">
+        <ul>
+            <li {if $index==1}class="active_bg" {/if}><a href="/user.html">个人信息</a></li>
+            <li {if $index==2}class="active_bg" {/if}><a href="/user/account">账号设置</a></li>
+            <li {if $index==3}class="active_bg" {/if}><a href="/user/question">我的问答</a></li>
+            <li {if $index==4}class="active_bg" {/if}><a href="">意见反馈</a></li>
+            <li {if $index==5}class="active_bg" {/if}><a href="">在线客服</a></li>
+        </ul>
+
+    </div>
+</div>

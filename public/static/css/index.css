@@ -559,7 +559,7 @@ li {
     color: #cccccc;
 }
 
-.card_content .teacher_list:hover div>span {
+.card_content .teacher_list:hover div>span:nth-child(1) {
     color: #69ABF4;
 }
 
@@ -794,7 +794,7 @@ li {
     display: inline-block;
     font-weight: bold;
     vertical-align: middle;
-    line-height: 50px;
+    line-height: 53px;
 }
 
 .titlecard {
@@ -817,6 +817,7 @@ li {
 
 .news_list {
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .news_list_left {
@@ -831,7 +832,6 @@ li {
     float: left;
     margin-left: 21px;
     width: 300px;
-    background-color: white;
     box-shadow: 0 0 6px white;
 }
 
@@ -925,6 +925,7 @@ ul.pagination li a:hover:not(.active) {
     padding-left: 20px;
     padding-right: auto;
     padding-top: 30px;
+    background-color: white;
 }
 
 .search_in input[type=text] {
@@ -976,7 +977,7 @@ ul.pagination li a:hover:not(.active) {
     padding-left: 20px;
     box-sizing: border-box;
     padding-right: 20px;
-    height: 504px;
+    margin-bottom: 60px;
 }
 
 .school_left {
@@ -1030,7 +1031,6 @@ ul.pagination li a:hover:not(.active) {
 .school_right {
     float: right;
     width: 867px;
-    height: 95%;
     padding: 5px;
     background-color: white;
     box-shadow: 0 0 6px white;
@@ -1045,8 +1045,10 @@ ul.pagination li a:hover:not(.active) {
     position: relative;
     margin-top: 24px;
     width: 100%;
-    height: 503px;
-    padding-right: 5px;
+    padding-right: 6px;
+    padding-left: 6px;
+    box-sizing: border-box;
+    margin-bottom: 35px;
 }
 
 .school_right_left {
@@ -1133,7 +1135,7 @@ ul.pagination li a:hover:not(.active) {
     width: 10px;
     height: 10px;
     position: absolute;
-    left: 48.7%;
+    left: 49.7%;
     background-image: url(../image/c.png);
 }
 
@@ -1141,7 +1143,7 @@ ul.pagination li a:hover:not(.active) {
     width: 14px;
     height: 14px;
     position: absolute;
-    left: 48.5%;
+    left: 49.5%;
     top: 75px;
     background-image: url(../image/d.png);
 }
@@ -1150,7 +1152,7 @@ ul.pagination li a:hover:not(.active) {
     width: 14px;
     height: 14px;
     position: absolute;
-    left: 48.5%;
+    left: 49.5%;
     top: 117px;
     background-image: url(../image/b.png);
 }
@@ -1188,13 +1190,13 @@ ul.pagination li a:hover:not(.active) {
 }
 
 .teacher_title {
-    padding-top: 8px;
+    padding-top: 6px;
     padding-left: 20px;
     box-sizing: border-box;
     padding-right: 20px;
     box-shadow: 0 0 6px white;
-    height: 51px;
     width: 1200px;
+    height: 50px;
     background-color: white;
     margin: 0 auto;
     border-top: 1px solid #E6E6E6;
@@ -1231,7 +1233,12 @@ ul.pagination li a:hover:not(.active) {
 }
 
 .news_list_left table th {
-    background-color: #7f7f7f;
+    background-color: #F5F5F5;
+    color: black;
+}
+
+.news_list_left table h3 {
+    font-weight: bold;
 }
 
 .news_list_left table td,
@@ -1239,4 +1246,660 @@ th {
     text-align: center;
     border: 1px solid #cccccc;
     height: 39px;
+}
+
+.question ul>li {
+    padding-top: 12px;
+    padding-left: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E6E6E6;
+    overflow: hidden;
+}
+
+.question ul>li div:nth-child(1) {
+    margin-top: 12px;
+}
+
+.question_left {
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 90px;
+    padding-top: 20px;
+    background-color: #F8B500;
+}
+
+.job {
+    margin-top: 20px;
+}
+
+.job li {
+    cursor: pointer;
+    width: 402px;
+    margin-top: 23px;
+    padding: 6px;
+    box-sizing: border-box;
+    height: 181px;
+    border: 1px solid #ECECEB;
+    float: left;
+}
+
+.job li:hover {
+    border: 1px solid #0068B7;
+}
+
+.job li:hover h2 {
+    color: #0068B7;
+}
+
+.job li:hover span {
+    color: #0068B7;
+}
+
+.job li:nth-child(odd) {
+    margin-right: 11px;
+}
+
+.job li>div:nth-child(1) {
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.job li span {
+    color: gray;
+}
+
+.job li div p {
+    text-overflow: ellipsis;
+    color: gray;
+}
+
+.contact {
+    height: 266px;
+    width: 100%;
+}
+
+.contact p {
+    line-height: 64px;
+}
+
+.video_main li {
+    margin-top: 15px;
+    width: 267px;
+    height: 204px;
+    margin-left: 20px;
+    position: relative;
+    float: left;
+}
+
+.video_main .video_in {
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    top: 174px;
+    font-size: 12px;
+    background-color: #504F4C;
+    opacity: .8;
+}
+
+.video_main .video_in h2 {
+    line-height: 28px;
+    font-size: 12px;
+}
+
+.video_main .video_in span {
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.article_title {
+    padding: 10px;
+    padding-top: 20px;
+    border-bottom: 1px solid #DBD9D9;
+}
+
+.article_main {
+    padding: 10px;
+    padding-top: 35px;
+}
+
+.article_btn {
+    margin-right: 12px;
+    display: inline-block;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    border: 1px solid #DBD9D9;
+    color: gray;
+    border-radius: 10px;
+}
+
+.teacher_in {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 6px;
+    border: 1px solid #ECECEB;
+}
+
+.teacher_in img {
+    float: left;
+}
+
+.teacher_in_right {
+    margin-top: 20px;
+    width: 670px;
+    margin-left: 40px;
+    float: left;
+}
+
+.teacher_in_right h2 {
+    padding-bottom: 8px;
+    width: 65px;
+    color: #0068B7;
+    float: none;
+    border-bottom: 2px solid #0068B7;
+    margin-bottom: 2px;
+}
+
+.teacher_in_right span {
+    font-size: 18px;
+    color: #0068B7;
+}
+
+.teacher_in_right p {
+    margin-top: 25px;
+    color: gray;
+}
+
+.teacher_courses {
+    padding: 30px;
+    box-sizing: border-box;
+    width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 12px;
+    min-height: 200px;
+}
+
+.teacher_courses_left {
+    float: left;
+    width: 688px;
+}
+
+.teacher_courses_tite {
+    width: 100%;
+    height: 35px;
+    background-color: #F2F2F2;
+}
+
+.teacher_courses_right {
+    margin-left: 40px;
+    width: 410px;
+    float: left;
+}
+
+.teacher_courses_rmain {
+    padding: 10px;
+}
+
+.teacher_courses_rmain input {
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #ECECEB;
+}
+
+.teacher_courses_rmain input[type=button] {
+    cursor: pointer;
+    background-color: #0068B7;
+    color: white;
+    font-size: 18px;
+}
+
+.course_title {
+    width: 80%;
+    height: 67px;
+    margin: 0 auto;
+    margin-top: 12px;
+    background-color: #FAFAFA;
+}
+
+.course_title span {
+    display: inline-block;
+    margin-top: 12px;
+    margin-left: 12px;
+}
+
+.course_title button {
+    cursor: pointer;
+    margin-left: 50px;
+    padding: 7px;
+    background-color: #FF7800;
+    border: 0;
+    color: white;
+    border-radius: 29px;
+}
+
+.job_details {
+    position: fixed;
+    background-color: white;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+    width: 838px;
+    top: 100px;
+    left: 28%;
+    z-index: 9999;
+}
+
+.job_details_title {
+    height: 40PX;
+    border-bottom: 1px solid #ECECEB;
+}
+
+.job_details_title h2 {
+    margin: 12px auto;
+    width: 147px;
+    color: #0068B7;
+}
+
+.job_clear {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -22px;
+    left: 814px;
+    background-image: url(../image/n.png);
+}
+
+.branch_left ul li {
+    position: relative;
+    font-size: 16px;
+    width: 119px;
+    text-align: center;
+    height: 24px;
+    margin-top: 7px;
+    float: left;
+}
+
+.branch_left ul li:not(:last-child) {
+    border-right: 1px solid #999999;
+}
+
+.branch_left {
+    margin-top: 27px;
+}
+
+.branch_left span {
+    display: block;
+    float: left;
+    margin-right: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: white;
+    font-size: 18px;
+    background-color: #0068B7;
+}
+
+.branch_left .xuanfu {
+    display: none;
+    position: absolute;
+    background: url(../image/kuang.png) no-repeat;
+    background-size: 100%;
+    width: 330px;
+    height: 65px;
+    bottom: 22px;
+}
+
+.login_main {
+    padding: 1px;
+    height: 735px;
+    background: url(../image/background.jpg) no-repeat;
+}
+
+.login_conter {
+    width: 1100px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 65px;
+}
+
+.login_left {
+    float: left;
+    height: 100%;
+}
+
+.login_right {
+    width: 550px;
+    height: 100%;
+    float: left;
+    background-color: white;
+}
+
+.login_log {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.login_right .qiehuan {
+    margin-top: 31px;
+    text-align: center;
+}
+
+.qiehuan button {
+    border: 1px solid #0068B7;
+    background-color: white;
+    color: #0068B7;
+    padding: 12px 82px 12px 82px;
+    float: left;
+}
+
+.login_form input[type=text] {
+    margin-top: 24px;
+    padding: 10px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.login_form input[type=password] {
+    margin-top: 24px;
+    padding: 10px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.login_form input[type=button] {
+    cursor: pointer;
+    margin-top: 24px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #999999;
+    background-color: #E6E6E6;
+    border: 1px solid #E6E6E6;
+}
+
+.login_form input[type=button]:hover {
+    background-color: #0068B7;
+    color: white;
+}
+
+#code {
+    cursor: pointer;
+    width: 37%;
+    margin-top: 24px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 0px 10px 10px 0px;
+    color: #999999;
+    background-color: #0068B7;
+    color: white;
+    border: 1px solid #0068B7;
+}
+
+.user_main {
+    padding: 1px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.user_left {
+    float: left;
+    margin-top: 12px;
+    width: 350px;
+    height: 700px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.user_right {
+    float: left;
+    margin-top: 12px;
+    margin-left: 12px;
+    background-color: white;
+    width: 830px;
+    height: 700px;
+    margin-bottom: 10px;
+}
+
+.user_log {
+    text-align: center;
+}
+
+.user_log>img {
+    margin-top: 24px;
+    width: 156px;
+    border-radius: 50%;
+}
+
+.user_log>h3 {
+    margin-top: 6px;
+}
+
+.user_log button {
+    cursor: pointer;
+    width: 81px;
+    height: 26px;
+    margin-top: 12px;
+    background-color: white;
+    border: 1px solid #BFBFBF;
+    color: #BFBFBF;
+}
+
+.user_list {
+    margin-top: 40px;
+}
+
+.user_list ul>li {
+    margin-bottom: 1px;
+    width: 100%;
+    text-align: center;
+    padding-top: 18px;
+    font-size: 17px;
+    padding-bottom: 18px;
+    color: #333333;
+    border-bottom: 1px solid #ECECEB;
+}
+
+.user_right_title {
+    width: 762px;
+    margin: 0 auto;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ECECEB;
+    margin-top: 25px;
+}
+
+.user_right_title>h3 {
+    padding-left: 6px;
+    border-left: 2px solid #0068B7;
+    font-weight: bold;
+}
+
+.user_right_main {
+    width: 100%;
+}
+
+.user_right_xiangxi {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.user_right_xiangxi ul>li {
+    margin-bottom: 24px;
+    width: 244px;
+    float: left;
+    margin-left: 24px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.user_right_xiangxi ul>li span {
+    color: #999999;
+}
+
+.user_right_xiangxi input[type=text] {
+    height: 30px;
+    padding-left: 12px;
+    border-radius: 10px;
+    border: 1px solid #ECECEB;
+}
+
+.user_right_xiangxi input[type=email] {
+    height: 30px;
+    padding-left: 12px;
+    border-radius: 10px;
+    border: 1px solid #ECECEB;
+}
+
+.user_right_xiangxi input[type=button] {
+    cursor: pointer;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 8px;
+    color: white;
+    background-color: #0068B7;
+    border: none;
+    margin-left: 385px;
+    margin-top: 80px;
+}
+
+.account ul>li {
+    margin-top: 10px;
+    height: 25px;
+}
+
+.account ul>li button {
+    cursor: pointer;
+    width: 79px;
+    height: 27px;
+    background-color: #1F8FE3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.account ul>li span {
+    color: gray;
+}
+
+.email_edit {
+    padding: 1px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 68px;
+    margin-bottom: 68px;
+}
+
+.email_edit a {
+    display: block;
+    float: right;
+    color: #0068B7;
+}
+
+.email_edit_main {
+    margin-top: 24px;
+    width: 100%;
+    height: 500px;
+    background-color: white;
+}
+
+.email_edit_title {
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    background-color: #0068B7;
+}
+
+.email_edit_title>h2 {
+    line-height: 70px;
+    font-size: 30px;
+    color: white;
+}
+
+.email_form {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 24px;
+    text-align: center;
+}
+
+.email_form input {
+    margin-top: 20px;
+}
+
+.email_form span {
+    font-size: 18px;
+}
+
+.email_form input[type=email] {
+    border: 1px solid #ECECEB;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ECECEB;
+}
+
+.email_form input[type=tel] {
+    border: 1px solid #ECECEB;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ECECEB;
+}
+
+.email_form input[type=text] {
+    border: 1px solid #ECECEB;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #ECECEB;
+}
+
+.email_form input[type=button] {
+    cursor: pointer;
+    border: 1px solid #ECECEB;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+    background-color: #0068B7;
+}
+
+.email_form input[type=password] {
+    border: 1px solid #ECECEB;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ECECEB;
+}
+
+.email_form button {
+    cursor: pointer;
+    width: 40%;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #0068B7;
+    border: none;
 }

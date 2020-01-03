@@ -1,40 +1,41 @@
 {include file="common/userheader"}
-<div class="main">
-    <div class="login_main">
-        <div class="login_conter">
-            <div class="login_left">
-                <img src="__STATIC__/image/Signin.jpg" height="100%" width="550px" />
+<div class="main" style="background-color: #FAFAFA;">
+    <div class="user_main">
+        {include file='common/login_left'}
+        <div class="user_right">
+            <div class="user_right_title">
+                <h3>完善资料</h3>
             </div>
-            <div class="login_right">
-                <div style="margin:0 auto;width: 390px;">
-                    <div class="login_log">
-                        <img src="/static/image/logo2.png">
-                    </div>
-                    <div class="qiehuan">
-                        <a href="/login"> <button style=" border-radius: 10px 0px 0px 10px;cursor: pointer; ">登录</button></a>
-                        <button style=" border-radius: 0px 10px 10px 0px;background-color: #0068B7;color: white;">注册</button>
-                    </div>
+            <div class="user_right_main">
+                <div class="user_log">
+                    <img src="__STATIC__{$user['image']}">
+                    <h3>{$user['username']}</h3>
+                </div>
+                <div class="user_right_xiangxi">
                     <form class="layui-form">
-                        <div class="login_form">
+                        <ul>
+                            <li><span>手机号：&nbsp;&nbsp;&nbsp;</span>{$user['mobile']}</li>
+                            <li>
+                                <span> 性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
 
-                            <input type="text" width="100%" placeholder="所属院校" name="courses" style="padding-left: 18px;" autocomplete="off" lay-verify="required">
-                            <input type="text" width="100% " placeholder="院校专业" name="major" style="padding-left: 18px;" autocomplete="off" lay-verify="required">
-                            <input type="text" width="100% " placeholder="手机号" name="mobile" style="padding-left: 18px; " lay-verify="required|phone">
-                            <input type="text" placeholder="验证码" name="captcha" style="width: 63%;padding-left: 18px;border-radius: 10px 0px 0px 10px;border: 1px solid #cccccc; " lay-verify="required"><input type="button" value="发送验证码 " id="code" />
-                            <input type="password" placeholder="设置密码 " style="background-image: url(__STATIC__/image/icon2.png);background-repeat: no-repeat;background-position: 11px; " name="password" lay-verify="required" />
-                            <input type="button" value="登录" lay-filter="demo1" lay-submit="">
+                                <input type="radio" name="sex" id="nan" value="0" {if $user[ 'sex']==0}checked{/if} style="display: inline-block;"><span>女</span>
 
-                        </div>
+                                <input type="radio" name="sex" id="nv" value="1" {if $user[ 'sex']==1}checked{/if} style="display: inline-block;"><span> 男</span>
+
+                            </li>
+                            <li><span>现居：</span><input type="text" value="{$user['addr']}" name="addr"></li>
+                            <li><span>所诉院校：</span><input type="text" value="{$user['courses']}" name="courses"></li>
+                            <li><span>学校专业：</span><input type="text" value="{$user['major']}" name="major"></li>
+                            <li><span>邮箱：</span><input type="email" value="{$user['email']}" lay-verify="email" name="email"></li>
+                        </ul>
+                        <input type="button" value="提交" lay-filter="demo1" lay-submit="" />
                     </form>
+
                 </div>
             </div>
         </div>
 
-
-
     </div>
-
-
 </div>
 <script type="text/javascript ">
     layui.use(['form', 'layedit', 'laydate'], function() {
@@ -51,7 +52,6 @@
 
         form.verify({
 
-
             phone: [/^1[3|4|5|7|8]\d{9}$/, '手机必须11位，只能是数字！']
 
             ,
@@ -64,41 +64,41 @@
         layedit.build('LAY_demo_editor');
         //监听提交
         form.on('submit(demo1)', function(data) {
+            //获取性别
+            var sex = $.trim($('.user_right_xiangxi input[name=sex]:checked').val());
+            //获取地址
+            var addr = $.trim($('.user_right_xiangxi input[name=addr]').val());
             //获取院校
-            var courses = $.trim($('.login_form input[name=courses]').val());
+            var courses = $.trim($('.user_right_xiangxi input[name=courses]').val());
             //获取专业
-            var major = $.trim($('.login_form input[name=major]').val());
-            //获取手机号
-            var mobile = $.trim($('.login_form input[name=mobile]').val());
-            //获取验证吗
-            var captcha = $.trim($('.login_form input[name=captcha]').val());
-            //获取密码
-            var password = $.trim($('.login_form input[name=password]').val());
+            var major = $.trim($('.user_right_xiangxi input[name=major]').val());
+            //获取邮箱
+            var email = $.trim($('.user_right_xiangxi input[name=email]').val());
             $.ajax({
-                url: 'login/logon',
+                url: '/user/sex',
                 type: 'post',
                 data: {
+                    'sex': sex,
+                    'addr': addr,
                     'courses': courses,
                     'major': major,
-                    'mobile': mobile,
-                    'captcha': captcha,
-                    'password': password
+                    'email': email
                 },
                 success: function(data) {
+                    console.log(data);
 
-                    if (data.type == 1) {
+                    if (data.status == 1) {
 
                         layer.msg(data.message, {
                             icon: 6
                         });
-                        window.location.href = "/ "
                     } else {
                         layer.msg(data.message, {
                             icon: 5
                         });
                     }
 
-
+                    // window.location.href = "/ "
                 }
 
 
@@ -110,7 +110,7 @@
         });
     })
 </script>
-
+<div style="clear:both"></div>
 <div class="footer ">
     <div class="footer_main ">
         <div class="footer_log am-fl ">
