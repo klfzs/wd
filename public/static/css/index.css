@@ -1671,12 +1671,12 @@ th {
 }
 
 .user_right {
+    padding-bottom: 20px;
     float: left;
     margin-top: 12px;
     margin-left: 12px;
     background-color: white;
     width: 830px;
-    height: 700px;
     margin-bottom: 10px;
 }
 
@@ -1902,4 +1902,223 @@ th {
     color: white;
     background-color: #0068B7;
     border: none;
+}
+
+.user_question {
+    width: 762px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ECECEB;
+}
+
+.user_question_left {
+    float: left;
+    width: 330px;
+    height: 132px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.user_question_right {
+    float: left;
+    width: 330px;
+    height: 132px;
+    margin-left: 100px;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #ECECEB;
+}
+
+.user_question_left div:nth-child(1) {
+    float: left;
+    width: 44%;
+    text-align: center;
+    height: 100%;
+    border-right: 1px solid white;
+    background-color: #F8B500;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.user_question_left div:nth-child(2) {
+    float: left;
+    width: 181px;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #F8B500;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.user_question_left div:nth-child(2) h2 {
+    margin-top: 48px;
+    color: white;
+}
+
+.user_question_left div:nth-child(1)>img {
+    margin-top: 22px;
+}
+
+.user_question_right div:nth-child(1)>img {
+    margin-top: 22px;
+}
+
+.user_question_right div:nth-child(1) {
+    float: left;
+    border-right: 1px solid white;
+    height: 100%;
+    width: 44%;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #0097E0;
+}
+
+.user_question_right div:nth-child(2) {
+    float: left;
+    width: 181px;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    text-align: center;
+}
+
+.user_question_right div:nth-child(2) h2 {
+    margin-top: 48px;
+    color: #525252;
+}
+
+.user_right_main textarea {
+    padding: 10px;
+    resize: none;
+    width: 687px;
+    height: 160px;
+    margin-left: 66px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.feedback {
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 381px;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: #0068B7;
+    border-radius: 10px;
+    color: white;
+}
+
+.quiz {
+    padding: 40px;
+}
+
+.quiz input[name=quesition] {
+    width: 80%;
+    padding: 8px;
+}
+
+.quiz textarea {
+    padding: 10px;
+    resize: none;
+    width: 80%;
+    vertical-align: top;
+    height: 160px;
+}
+
+.quiz input[type=button] {
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 336px;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: #0068B7;
+    border-radius: 10px;
+    color: white;
+}
+
+.details_title {
+    padding-top: 12px;
+    padding-left: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E6E6E6;
+    overflow: hidden;
+}
+
+.details_title>img {
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    float: left;
+}
+
+.details_main p {
+    color: gray;
+    margin-top: 24px;
+    margin-bottom: 50px;
+}
+
+.details_main {
+    padding-left: 20px;
+    padding-bottom: 12px;
+}
+
+.details_main input[type=text] {
+    margin-left: 10px;
+    width: 650px;
+    padding: 10px;
+}
+
+.details_main input[type=button] {
+    padding: 11px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #0068B7;
+    color: white;
+}
+
+.details_common {
+    width: 100%;
+    height: 300px;
+    margin-top: 12px;
+}
+
+.details_common {
+    margin-top: 20px;
+    width: 100%;
+    background-color: white;
+    height: 200px;
+    border: 1px solid red;
+}
+
+.details_common_title {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.details_common_list {
+    padding: 5px;
+}
+
+.details_common_list>div:nth-child(1) {
+    box-sizing: border-box;
+    float: left;
+    width: 76px;
+    padding-left: 15px;
+}
+
+.details_common_list:nth-child(1) img {
+    width: 46px;
+    border-radius: 50%;
+}
+
+.details_list_title {
+    margin-top: 14px;
+}
+
+.details_list_content {
+    float: left;
 }

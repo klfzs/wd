@@ -21,7 +21,7 @@
                     {volist name='question' id='vo'}
 
                     <li>
-                        <a href="/question/{$vo['id']}">
+                        <a href="/details/{$vo['id']}">
                             <img src="__STATIC__{$vo['image']}" style="display: block;width: 60px; height: 60px;border-radius: 50%;float: left;">
                             <div style="float: left; margin-left: 10px;">
                                 <h3>{$vo['title']}</h3>
@@ -54,7 +54,7 @@
 
         <div class="news_list_right" style="min-height: 620px;">
             <div class="question_left">
-                <a href="#">
+                <a href="/question/quiz.html">
                     <img src="__STATIC__/image/question_icon.png">
                     <span style="color: white;font-size: 37px;margin-top: 12px; vertical-align: middle;">马上提问</span>
                 </a>
@@ -65,7 +65,7 @@
                 <ul style="margin-top: 20px;">
                     {volist name="hot" id="vo"}
                     <li style="border-bottom: 0px; background-color: #EFF8FE;margin-bottom: 10px;">
-                        <a href="#">
+                        <a href="/details/{$vo['id']}.html">
                             <div style="display: inline-block;width: 250px;vertical-align:middle;">
                                 <p>{$vo['title']}</p>
                             </div>

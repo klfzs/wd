@@ -142,5 +142,68 @@ class User extends HomeBase
         return json(['status'=>0,'message'=>'原密码不正确']);
     }
    }
+   public function question()
+   {
+     //获取我的提问
+    $quiz=db('question')->where('user_id',$this->id)->count();
+    //获取我的问答
+    $common=db('comment')->where('uid',$this->id)->count();
+    //获取我的提问
+    $arr=db('question')->alias('a')->join('user u','a.user_id=u.id')->join('comment c','c.qid=a.id','LEFT')->field('u.image,a.id,u.username,a.title,a.create_time,a.status,a.click,a.num')->where('a.user_id',$this->id)->paginate(10);
+       $this->assign('arr',$arr);
+       $this->assign('num',1);
+       $this->assign('common',$common);
+       $this->assign('quiz',$quiz);
+       $this->assign('index',3);
+       return $this->fetch();
+   }
+   public function Answer()
+   {
+    //获取我的提问
+    $quiz=db('question')->where('user_id',$this->id)->count();
+    //获取我的问答
+    $common=db('comment')->where('uid',$this->id)->count();
+    //获取我的提问
+    $comment=db('comment')->where('uid',$this->id)->select();
+    
+    $qid=[];
+    foreach ($comment as $v) {
+        $qid[]=$v['qid'];
+    }
+
+    $arr=db('question')->alias('a')->join('user u','a.user_id=u.id')->join('comment c','c.qid=a.id','LEFT')->field('u.image,a.id,u.username,a.title,a.create_time,a.status,a.click,a.num')->where('a.id','in',$qid)->paginate(10);
+       $this->assign('arr',$arr);
+       $this->assign('common',$common);
+       $this->assign('quiz',$quiz);
+    $this->assign('index',3);
+    $this->assign('num',2);
+    return $this->fetch('question');
+   }
+   public function feedback()
+   {
+       $this->assign('index',4);
+       return $this->fetch();
+   }
+   public function message()
+   {
+    $data=$this->request->param();
+    //获取用户信息
+    $user=db('user')->where('id',$this->id)->find();
+    $res=db('message')->insert([
+        'msg_type'=>1,
+        'username'=>$user['username'],
+        'sex'=>$user['sex'],
+        'phone'=>$user['mobile'],
+        'e_mail'=>$user['email'],
+        'content'=>$data['message']
+    ]);
+    if($res)
+    {
+     return json(['status'=>1,'message'=>'提交成功']);
+    }
+    else{
+     return json(['status'=>0,'message'=>'提交失败']);
+    }
+   }
 }
 

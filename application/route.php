@@ -48,5 +48,12 @@ return [
     'user/phone'=>'user/phone',
     'user/phoneedit'=>'user/phoneedit',
     'user/password'=>'user/password',
-    'user/passwordedit'=>'user/passwordedit'
+    'user/passwordedit'=>'user/passwordedit',
+    'user/question'=>'user/question',
+    'user/Answer'=>'user/Answer',
+    'user/feedback'=>'user/feedback',
+    'feedback/message'=>'user/message',
+    'question/quiz'=>'question/quiz',
+    'details/:id'=>'question/details',
+    'quiz/Quizedit'=>'Question/quizedit'
 ];

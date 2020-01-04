@@ -1,0 +1,108 @@
+{include file="common/userheader"}
+<div class="main" style="background-color: #FAFAFA;">
+    <div class="user_main">
+        {include file='common/login_left'}
+        <div class="user_right">
+            <div class="user_right_title">
+                <h3>我的问答</h3>
+            </div>
+            <div class="user_question">
+                <a href="/user/question.html">
+                    <div class="user_question_left">
+                        <div>
+                            <img src="__STATIC__/image/wenda.png">
+                        </div>
+                        <div {if $num==2} style="background-color: white;border: 1px solid #ECECEB;" {/if}>
+                            <h2 {if $num==2} style="color: #525252;" {/if}>我的提问（{$quiz}）</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="/user/Answer">
+                    <div class="user_question_right">
+                        <div>
+                            <img src="__STATIC__/image/huida.png">
+                        </div>
+                        <div {if $num==2} style="background-color: #0097E0;" {/if}>
+                            <h2 {if $num==2} style="color: white;" {/if}>我的回答（{$common}）</h2>
+                        </div>
+                    </div>
+                </a>
+                <div style="clear:both"></div>
+            </div>
+
+            <div class="user_right_main">
+                <div class="question">
+                    <ul style="width: 760px; margin: 0 auto;">
+                        {volist name='arr' id='vo'}
+
+                        <li>
+                            <a href="/question/{$vo['id']}">
+                                <img src="__STATIC__{$vo['image']}" style="display: block;width: 60px; height: 60px;border-radius: 50%;float: left;">
+                                <div style="float: left; margin-left: 10px;">
+                                    <h3>{$vo['title']}</h3>
+                                    <div style="margin-top: 6px;"><span style="color: #0068B7;">{$vo['username']}</span><span style="color: gray;">{$vo['create_time']}&nbsp;&nbsp;提问</span></div>
+                                </div>
+                                <div style="float: right;">
+                                    {if $vo['status']==0}
+                                    <div style="padding: 8px; background-color: #F8B500;color: white;padding-left: 12px; padding-right: 12px;float: left;margin-right: 120px;">待解决</div>
+                                    {else /}
+                                    <div style="padding: 8px; background-color: #0068B7;color: white;padding-left: 12px; padding-right: 12px;float: left;margin-right: 120px;">已解决</div>
+                                    {/if}
+
+
+                                    <div style="float: left;margin-top: 15px;margin-right: 15px;">
+                                        <img src="__STATIC__/image/dz.png"><span style="margin-right: 12px;vertical-align: middle;">{$vo['click']}</span>
+                                        <img src="__STATIC__/image/hd.png"><span style="vertical-align: middle;">{$vo['num']}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        {/volist}
+                    </ul>
+
+                </div>
+                <div style="margin: 0 auto; text-align: center; height: 60px;padding-top:20px ;"> {$arr->render()}</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div style="clear:both"></div>
+<div class="footer ">
+    <div class="footer_main ">
+        <div class="footer_log am-fl ">
+            <img src="__STATIC__/image/foot-logo.png " alt="文登 " />
+        </div>
+        <div class="footer_list am-fl ">
+            <ul>
+                <li><a href="# ">学校简介</a></li>
+                <li><a href="# ">广告合作</a></li>
+                <li><a href="# ">关于我们</a></li>
+                <li><a href="# ">新闻咨询</a></li>
+                <li><a href="# ">意见反馈</a></li>
+                <li><a href="# ">人才招聘</a></li>
+                <li><a href="# ">网站地图</a></li>
+                <li><a href="# ">免责声明</a></li>
+                <li><a href="# ">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="footer_em am-fl ">
+            <img src="__STATIC__/image/qrcode_for_gh_9531463fa668_258.jpg " alt="文登二维码 " style="float: left; " />
+            <div class="am-fl ">
+                <p style="font-size: 16px; ">全国咨询热线</p>
+                <p>023-6582-3501</p>
+                <button>在线咨询</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<script src="__STATIC__/js/public.js "></script>
+
+</body>
+
+</html>

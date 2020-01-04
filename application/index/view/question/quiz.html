@@ -1,0 +1,126 @@
+{include file="common/header"}
+<div class="main" style="background-color: #FAFAFA;padding:1px ;">
+
+    <div class="news_list warp">
+        <div class="news_list_left" style="height: 600px;">
+            <form class="layui-form">
+                <div class="quiz">
+
+                    <div> 填写问题：<input type="text" name="quesition" placeholder="在25个字内简单描述你的问题" maxlength="25" lay-verify="required" autocomplete="off" /></div>
+                    <div style="margin-top: 24px;">问题描述：<textarea name="content" lay-verify="required" autocomplete="off"></textarea></div>
+                    <input type="button" lay-filter="demo1" lay-submit="" value="提交问题" />
+                </div>
+            </form>
+        </div>
+
+        <div class="news_list_right" style="min-height: 620px;">
+            <div class="news_new search_hot" style="padding-right: 29px;padding-left: 29px;margin-top: 0;">
+                <h4 style="margin:0 auto; width:56px">热门问题</h4>
+                <ul style="margin-top: 20px;">
+                    {volist name="hot" id="vo"}
+                    <li style="border-bottom: 0px; background-color: #EFF8FE;margin-bottom: 10px;">
+                        <a href="/details/{$vo['id']}.html">
+                            <div style="display: inline-block;width: 250px;vertical-align:middle;">
+                                <p>{$vo['title']}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div style="clear: both;"></div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function() {
+
+        var form = layui.form
+
+        , layer = layui.layer
+
+        , layedit = layui.layedit
+
+        , laydate = layui.laydate;
+
+        //自定义验证规则
+
+        form.verify({
+
+            title: function(value) {
+
+                if (value.length < 5) {
+
+                    return '标题至少得5个字符啊';
+
+                }
+
+            },
+            fname: function(value) {
+
+                if (value.length < 4) {
+
+                    return '请输入至少4位的用户名';
+
+                }
+
+            },
+            contact: function(value) {
+
+                if (value.length < 4) {
+
+                    return '内容请输入至少4个字符';
+
+                }
+
+            }
+
+            ,
+            phone: [/^1[3|4|5|7|8]\d{9}$/, '手机必须11位，只能是数字！']
+
+            ,
+            email: [/^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/, '邮箱格式不对']
+
+        });
+
+        //创建一个编辑器
+
+        layedit.build('LAY_demo_editor');
+
+        //监听提交
+
+        form.on('submit(demo1)', function(data) {
+            $.ajax({
+                type: 'POST',
+                url: '/quiz/quizedit',
+                data: $("form").serializeArray(),
+                success: function(data) {
+                    if (data.status == 1) {
+
+                        layer.msg(data.message, {
+                            icon: 6
+                        });
+                        history.back(-1);
+                    } else {
+                        layer.msg(data.message, {
+                            icon: 5
+                        });
+                        history.go(0)
+                    }
+
+                }
+
+
+
+            })
+
+        });
+
+    });
+</script>
+<div style="clear: both;"></div>
+{include file="common/footer"}
