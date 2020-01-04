@@ -2072,6 +2072,7 @@ th {
 
 .details_main input[type=button] {
     padding: 11px;
+    outline: none;
     padding-left: 30px;
     padding-right: 30px;
     border: none;
@@ -2081,17 +2082,9 @@ th {
 }
 
 .details_common {
-    width: 100%;
-    height: 300px;
-    margin-top: 12px;
-}
-
-.details_common {
     margin-top: 20px;
     width: 100%;
     background-color: white;
-    height: 200px;
-    border: 1px solid red;
 }
 
 .details_common_title {
@@ -2100,17 +2093,20 @@ th {
 }
 
 .details_common_list {
+    box-sizing: border-box;
+    border-bottom: 1px solid #ECECEB;
+    padding-bottom: 20px;
+    box-sizing: border-box;
     padding: 5px;
 }
 
 .details_common_list>div:nth-child(1) {
-    box-sizing: border-box;
     float: left;
     width: 76px;
     padding-left: 15px;
 }
 
-.details_common_list:nth-child(1) img {
+.details_common_list img {
     width: 46px;
     border-radius: 50%;
 }
@@ -2121,4 +2117,7 @@ th {
 
 .details_list_content {
     float: left;
+    width: 659px;
+    margin-top: 10px;
+    padding-bottom: 20px;
 }
