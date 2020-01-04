@@ -96,6 +96,10 @@ class Login extends HomeBase
         return json(['status'=>0,'message'=>'注册失败']);
        }
     }
+    public function wangji()
+    {
+       return $this->fetch();
+    }
 
 
 

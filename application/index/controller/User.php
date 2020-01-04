@@ -149,7 +149,7 @@ class User extends HomeBase
     //获取我的问答
     $common=db('comment')->where('uid',$this->id)->count();
     //获取我的提问
-    $arr=db('question')->alias('a')->join('user u','a.user_id=u.id')->join('comment c','c.qid=a.id','LEFT')->field('u.image,a.id,u.username,a.title,a.create_time,a.status,a.click,a.num')->where('a.user_id',$this->id)->paginate(10);
+    $arr=db('question')->alias('a')->join('user u','a.user_id=u.id')->field('u.image,a.id,u.username,a.title,a.create_time,a.status,a.click,a.num')->where('a.user_id',$this->id)->paginate(10);
        $this->assign('arr',$arr);
        $this->assign('num',1);
        $this->assign('common',$common);

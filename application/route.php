@@ -55,5 +55,8 @@ return [
     'feedback/message'=>'user/message',
     'question/quiz'=>'question/quiz',
     'details/:id'=>'question/details',
-    'quiz/Quizedit'=>'Question/quizedit'
+    'quiz/Quizedit'=>'Question/quizedit',
+    'details/commone'=>'Question/commone',
+    'caina/:id'=>'Question/caina',
+    'login/wangji'=>'login/wangji'
 ];

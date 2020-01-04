@@ -33,61 +33,6 @@
 
     </div>
 </div>
-<script>
-    $('.user_right_xiangxi input[type=radio]').change(function() {
-
-        var val = $('.user_right_xiangxi input[type=radio]:checked').val()
-        $.ajax({
-            url: '/user/sex',
-            type: 'post',
-            data: {
-                'sex': val
-            },
-            success: function(data) {
-                if (data.status == 1) {
-                    layer.msg(data.message, {
-                        icon: 6
-                    });
-                } else {
-                    layer.msg(data.message, {
-                        icon: 5
-                    });
-                }
-
-
-            }
-
-        })
-
-
-    })
-    $('.user_right_xiangxi input[type=text]').blur(function() {
-
-        var val = $('.user_right_xiangxi input[type=text]').val()
-        $.ajax({
-            url: '/user/addr',
-            type: 'post',
-            data: {
-                'addr': val
-            },
-            success: function(data) {
-                if (data.status == 1) {
-                    layer.msg(data.message, {
-                        icon: 6
-                    });
-                } else {
-                    layer.msg(data.message, {
-                        icon: 5
-                    });
-                }
-
-
-            }
-
-        })
-
-    })
-</script>
 <div style="clear:both"></div>
 <div class="footer ">
     <div class="footer_main ">

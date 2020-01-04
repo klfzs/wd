@@ -1,17 +1,16 @@
 {include file="common/userheader"}
 <div class="main" style="background-color: #FAFAFA;padding: 1px;">
     <div class="email_edit">
-        <a href="javascript:history.back(-1);">退出</a>
+        <a href="/logon.html" style="margin-left: 5px;">注册</a> <span style="float: right;">|</span><a href="/login.html" style="margin-left: 12px;margin-right: 5px;">马上登录 </a><span style="float: right;">已有账号,</span>
         <div class="email_edit_main">
             <div class="email_edit_title">
                 <h2>账号安全</h2>
             </div>
             <form>
                 <div class="email_form">
-                    <span>修改手机号</span>
+                    <span>找回密码</span>
 
-                    <input type="tel" name="phone" placeholder="原手机号">
-                    <input type="tel" name="mobile" placeholder="新手机号">
+                    <input type="tel" name="mobile" placeholder="手机号">
                     <input type="text" name="captcha" placeholder="验证码"><button>发送验证码</button>
                     <input type="button" value="确定">
 
@@ -24,7 +23,7 @@
     <script>
         $('.email_form input[type=button]').click(function() {
             $.ajax({
-                url: '/user/phoneedit',
+                url: '/login/wangjiedit',
                 type: 'post',
                 data: $("form").serializeArray(),
                 success: function(data) {
